@@ -1,0 +1,449 @@
+$white-color: #ffffff;
+$main-color: #207EF7;
+$dark-color: #1d1d1d;
+$bg-color: #252525;
+$card-bg: #0e0e0e;
+
+
+.switch-box {
+    position: fixed;
+    bottom: 15px;
+    right: 120px;
+    z-index: 9999;
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: transparent;
+        border: 1.5px solid $white-color;
+        transition: 0.4s;
+        &::before {
+            position: absolute;
+            content: "";
+            height: 25px;
+            width: 25px;
+            left: 0px;
+            bottom: 4px;
+            top: 0;
+            bottom: 0;
+            margin: auto 0;
+            transition: 0.4s;
+            box-shadow: 0 0px 15px #2020203d;
+            background: white url('../img/night.png');
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        &.round {
+            border-radius: 34px;
+            &::before {
+                border-radius: 50%;
+            }
+        }
+    }
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 50px;
+        height: 30px;
+        input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+    }
+    input:checked + .slider {
+        background-color: transparent;
+        border: 1.5px solid $main-color;
+    }
+      
+    input:focus + .slider {
+        box-shadow: 0 0 1px $main-color;
+    }
+      
+    input:checked + .slider:before {
+        transform: translateX(24px);
+        background: white url('../img/sunny.png');
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}
+.theme-dark {
+    h1, h2, h3, h4, h5, h6 {
+        color: $white-color !important; 
+    }
+    h3 {
+        color: $white-color !important; 
+        a {
+            color: $white-color !important;
+            transition: 0.7s;
+            &:hover {
+                color: $main-color !important;
+            }
+        }
+    }
+    h2 {
+        a {
+            color: $white-color !important;
+            transition: 0.7s;
+            &:hover {
+                color: $main-color !important;
+            }
+        }
+    }
+    a {
+        color: $white-color !important;
+        transition: 0.7s;
+        &:hover {
+            color: $main-color !important;
+        }
+    }
+    .default-btn {
+        span {
+            background-color: $white-color;
+            color: $main-color !important;
+        }
+        &:hover {
+            color: $main-color !important;
+        }
+    }
+    span {
+        color: $white-color !important; 
+    }
+    p {
+        color: $white-color !important; 
+    }
+    .content {
+        p {
+            color: $white-color !important; 
+            b {
+                color: $white-color !important; 
+            }
+        }
+    }
+    body {
+        background: $dark-color;
+        color: $white-color; 
+    }
+    .bg-white {
+        background-color: $bg-color !important;
+        --bs-bg-opacity: unset;
+    }
+    .bg-color {
+        background-color: $bg-color;
+    }
+    .bg-color-1 {
+        background-color: $card-bg;
+    } 
+    .bg-f6f4ff {
+        background-color: $bg-color;
+    }
+    .form-group {
+        label {
+            color: $white-color;
+        }
+    }
+    .form-control {
+        background-color: $card-bg !important;
+        color: $white-color !important;
+    }
+    .input-group {
+        background-color: $card-bg !important;
+    }
+    .nice-select {
+        background-color: $card-bg ;
+    }
+    .list {
+        background-color: $card-bg ;
+        .option {
+            color: $white-color !important;
+        }
+    }
+    .option {
+        &.selected {
+            color: $white-color;
+            background-color: $main-color;
+        }
+        &:hover {
+            color: $white-color;
+            background-color: $main-color;
+        }
+        &.focus {
+            color: $white-color;
+            background-color: $main-color;
+        }
+        &.selected {
+            &.focus {
+                color: $white-color;
+                background-color: $main-color;
+            }
+        }
+    }
+    .select-box {
+        .nice-select {
+            .list {
+                background-color: $card-bg !important;
+            }
+        }
+    }
+    
+    ul {
+        li {
+            color: $white-color !important;
+        }
+    }
+    .top-header {
+        background-color: $card-bg;
+    }
+    .flag-area {
+        .flag-item-top {
+            .flag-bar {
+                i {
+                    color: $white-color;
+                }
+            }
+            .flag-item-bottom {
+                background-color: $card-bg;
+            }
+        }
+    }
+    .navbar-area {
+        .main-navbar {
+            &.pag-nav {
+                background-color: $bg-color;
+            }
+            nav {
+                .navbar-nav  {
+                    .nav-item {
+                        a {
+                            color: $white-color !important;
+                            &.active {
+                                color: $main-color !important;
+                            }
+                            &:hover {
+                                color: $main-color !important;
+                            }
+                        }
+                        .dropdown-menu {
+                            background-color: $card-bg !important;
+                            li {
+                                a {
+                                    color: $white-color !important;
+                                    &.active {
+                                        color: $main-color !important;
+                                    }
+                                    &:hover {
+                                        color: $main-color !important;
+                                    }
+                                }
+                            }
+                        }
+                    }   
+                }
+            }
+        }
+        .is-sticky {
+            background-color: $bg-color !important;
+        }
+    }
+
+    .main-responsive-nav {
+        background-color: $bg-color;
+        .mean-container {
+            a {
+                &.meanmenu-reveal {
+                    color: $white-color !important;
+                    span {
+                        background-color: $white-color !important;
+                    }
+                }
+            }
+            .navbar-nav {
+                background-color: $dark-color;
+            }
+            .mean-nav {
+                .navbar-nav {
+                    .nav-item {
+                        a {
+                            color: $white-color;
+                            &.active {
+                                color: $main-color !important;
+                            }
+                            &:hover {
+                                color: $main-color !important;
+                            }
+                        }
+                        .dropdown-menu {
+                            background-color: $dark-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @media only screen and (max-width: 1200px) {
+        .navbar-area {
+            background-color: $bg-color;
+            &.is-sticky {
+                background-color: $bg-color !important;
+            }
+        }
+    }
+
+    .banner-area {
+        .banner-text {
+            .search-form {
+                .form-group {
+                    background-color: $bg-color;
+                    .nice-select {
+                        &::after {
+                            border-color: $white-color;
+                        }
+                        .list {
+                            background-color: $card-bg;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .banner-two {
+        .banner-two-shape {
+            .shape-1 {
+                img {
+                    opacity: 0.1;
+                }
+            }
+        }
+    }
+    .banner-three-area {
+        &::before {
+            background-color: $card-bg;
+        }
+    }
+    .service-card, .dedicated-card, .clients-card, .services-card-three {
+        background-color: $card-bg;
+    }
+    .team-card {
+        .caption {
+            background-color: $card-bg;
+        }
+    }
+    .doctors-card {
+        .caption {
+            .caption-text {
+                background-color: $card-bg;
+            }
+        }
+    }
+    .testimonials-area {
+        .testimonials-slider {
+            .slider-item {
+                .testimonials-text {
+                    .client-1 {
+                        background-color: $card-bg;
+                    }
+                }
+            }
+        }
+    }
+    .blog-card {
+        background-color: $card-bg;
+    }
+    .blog-area-two {
+        .blog-card {
+            &:hover {
+                background-color: #000000;
+            }
+        }
+    }
+    .services-dateils-area  {
+        .tags {
+            a {
+                background-color: $card-bg;
+            }
+        }
+        .blog-details-desc {
+            .comments-area {
+                .comment-body {
+                    background-color: $card-bg;
+                }
+            }
+        }
+        .widget-area {
+            .widget_search form {
+                .search-field  {
+                    background-color: $card-bg;
+                    color: $white-color;
+                }
+                button {
+                    color: $white-color;
+                }
+            }
+            .side-bar-box {
+                background-color: $bg-color;
+            }
+        }
+       .services-details {
+            .comments-area {
+                .comment-author {
+                    color: $white-color;
+                }
+                .comment-body {
+                    .reply {
+                        a {
+                            color: $white-color !important;
+                        }
+                    }
+                }
+            }
+       }
+    }
+    .doctors-list-area {
+        background-color: $bg-color;
+    }
+    .information-area {
+        .information-text {
+            background-color: $bg-color;
+        }
+    }
+    .footer-area {
+        background-color: #000000 !important;
+    }
+    .footer-bottom-area {
+        background-color: $card-bg;
+    }
+    .frequently-area {
+        .frequently-text {
+            .faq-contant {
+                .accordion {
+                    li {
+                        .title {
+                            background-color: $card-bg;
+                            color: $white-color;
+                            &.active {
+                                background-color: $main-color;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .pagination {
+        .page-item {
+            .page-link {
+                &:hover {
+                    color: $white-color !important;
+                }
+            }
+        }
+    }
+    .contact-area {
+        &.bg-color-1 {
+            background-color: $bg-color !important;
+        }
+    }
+}
