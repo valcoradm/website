@@ -1228,7 +1228,7 @@ Services Area CSS
   transition: 0.5s;
 }
 .service-card .main-icon {
-  background-color: #E1F3FF;
+  background-color: #fad99c;
   color: #CF7325;
   width: 90px;
   height: 90px;
@@ -1596,7 +1596,7 @@ Testimonials Area CSS
   color: #292323;
 }
 .testimonials-area .testimonials-slider .slider-item .testimonials-text .client-1 i {
-  color: #E1F3FF;
+  color: #f9da8c;
   position: absolute;
   font-size: 60px;
   right: 30px;
