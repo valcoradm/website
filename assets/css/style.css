@@ -232,13 +232,36 @@ Default CSS
 .bg-color {
   background-color: #E1F3FF;
 }
+.bg-color-black{
+  background-color: #000;
+  color: white;
+}
+.bg-color-black a, .bg-color-black h4, .bg-color-black p{
+  color: white;
+}
 
 .bg-color-1 {
   background-color: #F5FBFF;
 }
 
+.bg-color-2 {
+  background-color: #D07325;
+}
+
+.bg-color-2 i::before{
+  color: white;
+}
+
+.bg-color-2 h3, .bg-color-2 p{
+  color: white;
+}
+
 .bg-f6f4ff {
   background-color: #f6f4ff;
+}
+
+.treatment-card.bg-color-2:hover{
+  background-color: #ea700c;
 }
 
 /*================================================
@@ -2813,8 +2836,8 @@ Frequently Area Two CSS
   transition: all 0.2s ease-in-out;
 }
 .frequently-area .frequently-text .faq-contant .accordion li .title.active {
-  border-bottom: 1px solid #256dea;
-  background-color: #256dea;
+  border-bottom: 1px solid #D07325;
+  background-color: #D07325;
   color: #ffffff;
 }
 .frequently-area .frequently-text .faq-contant .accordion li .title.active:after {
