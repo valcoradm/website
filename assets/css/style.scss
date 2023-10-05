@@ -22,9 +22,10 @@ This files table contents are outlined below>>>>>
 /*================================================
 Default CSS
 =================================================*/
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,800&display=swap');
+</style>;
 
-$font-family: 'Roboto', sans-serif;
+$font-family: 'Roboto', sans-serif, Source-serif;
 $main-color: #207EF7;
 $optional-color: #E1F3FF;
 $white-color: #ffffff;
@@ -2993,8 +2994,8 @@ Frequently Area Two CSS
                             transition: all 0.2s ease-in-out;
                         }
                         &.active {
-                            border-bottom: 1px solid #256dea;
-                            background-color: #256dea;
+                            border-bottom: 1px solid hsl(20, 60%, 50%);
+                            background-color: #cf7325;
                             color: $white-color;
                             &:after {
                                 -webkit-transform: rotate(45deg);
