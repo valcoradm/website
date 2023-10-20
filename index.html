@@ -392,50 +392,6 @@
                     </div>
                 </div>
             </div>
-            <div class="banner-two">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-lg-6">
-                            <div class="b-two-text">
-                                <h1>We care for your  pet and give a proper treatment</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                <div class="b-two-btn">
-                                    <a href="#" class="default-btn two">
-                                        Quick appointment
-                                        <span></span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-    
-                        <div class="col-lg-6">
-                            <div class="b-two-img">
-                                <div class="main-img">
-                                    <img src="assets/img/banner/banner-4.jpg" alt="Image">
-                                </div>
-                                <div class="shape">
-                                    <img src="assets/img/shapes/shape-9.png" alt="Shape">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-    
-                    <div class="banner-two-shape">
-                        <div class="shape-1">
-                            <img src="assets/img/shapes/shape-7.png" alt="Shape">
-                        </div>
-                        <div class="shape-2">
-                            <img src="assets/img/shapes/shape-8.png" alt="Shape">
-                        </div>
-                        <div class="shape-3">
-                            <img src="assets/img/shapes/shape-10.png" alt="Shape">
-                        </div>
-                        <div class="shape-4">
-                            <img src="assets/img/shapes/shape-11.png" alt="Shape">
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
         <!-- End Banner Area  -->
 
@@ -600,7 +556,7 @@
 
                                         <div class="col-md-6 col-lg-6">
                                             <div class="form-group">
-                                                <input id="datetimepicker" type="text" class="form-control" placeholder="Centro Médico">
+                                                <input type="text" class="form-control" placeholder="Centro Médico">
                                             </div>
                                         </div>
 
@@ -656,7 +612,7 @@
                                         <h3><a href="doctors-details">Dr. Andres Arias</a></h3>
                                         <p>Dog specilist</p>
                                         <a href="#">glennriley@gmail.com</a>
-                                        <ul>
+                                        <ul class="see-more-button">
                                             <li>
                                                 <a href="#" target="_blank">
 													Ver más
@@ -680,7 +636,7 @@
                                         <h3><a href="doctors-details">Dra. Chantal Pon</a></h3>
                                         <p>Rabbit specilist</p>
                                         <a href="#">estelahowerton@gmail.com</a>
-                                        <ul>
+                                        <ul class="see-more-button">
                                             <li>
                                                 <a href="#" target="_blank">
 													Ver más
@@ -704,7 +660,7 @@
                                         <h3><a href="doctors-details">Dr. Felipe Barrera</a></h3>
                                         <p>Cat specilist</p>
                                         <a href="#">jamesworkman@gmail.com</a>
-                                        <ul>
+                                        <ul class="see-more-button">
                                             <li>
                                                 <a href="#" target="_blank">
 													Ver más
@@ -729,7 +685,32 @@
                                         <p>Cirujano Dentista.
                                         </p>
                                         <a href="#">U. de Antofagasta - U. F. Terrae - U. de Chile.</a>
-                                        <ul>
+                                        <ul class="see-more-button">
+                                            <li>
+                                                <a href="#" target="_blank">
+													Ver más
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="doctors-card">
+                        <a href="#">
+                            <img src="assets/img/doctors/doctor-5.jpg" alt="Image">
+                        </a>
+                        <div class="d-table">
+                            <div class="d-table-cell">
+                                <div class="caption">
+                                    <div class="caption-text">
+                                        <h3><a href="doctors-details">Dr. Jhon Doe</a></h3>
+                                        <p>Cirujano Dentista.
+                                        </p>
+                                        <a href="#">U. de Antofagasta - U. F. Terrae - U. de Chile.</a>
+                                        <ul class="see-more-button">
                                             <li>
                                                 <a href="#" target="_blank">
 													Ver más
@@ -744,6 +725,11 @@
                 </div>
             </div>
         </div>
+        <script>
+            [].forEach.call(document.querySelectorAll('.see-more-button'), function (el) {
+                el.style.visibility = 'hidden';
+            });
+        </script>
         <!-- End Doctors Area -->
 
         <!-- Offers Area -->
@@ -809,8 +795,10 @@
                 <div class="clients-slider owl-carousel owl-theme">
                     <div class="clients-card">
                         <div class="client-img">
-                            <img src="assets/img/doctors/doctor-10.jpg" alt="Image">
-                            <i class='bx bxs-quote-left'></i>
+                            <a href="http://www.google.com" target="_blank">
+                                <img src="assets/img/doctors/doctor-10.jpg" alt="Image">
+                                <i class='bx bxl-youtube'></i>
+                            </a>
                         </div>
 
                         <p>This has the most hi tech and most effective & the doctor has appear here is highly profiled. It will make a proper image</p>
@@ -830,8 +818,10 @@
 
                     <div class="clients-card">
                         <div class="client-img">
-                            <img src="assets/img/doctors/doctor-11.jpg" alt="Image">
-                            <i class='bx bxs-quote-left'></i>
+                            <a href="http://www.google.com" target="_blank">
+                                <img src="assets/img/doctors/doctor-11.jpg" alt="Image">
+                                <i class='bx bxl-youtube'></i>
+                            </a>
                         </div>
 
                         <p>I have started work with this agency and it give us the special support on the global market. It has a brilliant team for treat</p>
@@ -850,8 +840,10 @@
 
                     <div class="clients-card">
                         <div class="client-img">
-                            <img src="assets/img/doctors/doctor-12.jpg" alt="Image">
-                            <i class='bx bxs-quote-left'></i>
+                            <a href="http://www.google.com" target="_blank">
+                                <img src="assets/img/doctors/doctor-12.jpg" alt="Image">
+                                <i class='bx bxl-youtube'></i>
+                            </a>
                         </div>
 
                         <p>This has the most hi tech and most effective &  the doctor has appear here is highly profiled. It will make a proper image</p>
@@ -1032,10 +1024,6 @@
                     </div>
 
                     <div class="col-lg-3 col-sm-6">
-						
-                    </div>
-
-                    <div class="col-lg-3 col-sm-6">
 							<h4 class="f-primary-b">Sucursal Carrera</h4>
 							<img src="assets/img/sucursal/carrera.png">
 							<br><br>
@@ -1130,9 +1118,84 @@
 							</div>
 						</div>
                     </div>
+
+                    <div class="col-lg-3 col-sm-6">
+						<h4 class="f-primary-b">AGREGA CALAMA</h4>
+						<img src="assets/img/sucursal/miscanti.png">
+						<br><br>
+                        <div style="display: flex;">
+							<div style="padding-right: 10px;">
+								<i class="fa fa-map-marker"></i>
+							</div>
+							<div style="line-height: 16px;">
+								Manuel Antonio Matta 2095<br> 
+								oficina 305<br> 
+								Edificio Miscanti<br> 
+								ANTOFAGASTA.<br>
+							</div>
+						</div>
+						<div style="display: flex;">
+							<div style="padding-right: 10px;">
+								<i class="fa fa-phone"></i>
+							</div>
+							<div>
+								<a href="callto:+56 55 2 467201">Oficina - +56 55 2 467201</a><br>
+							</div>
+						</div>
+						<div style="display: flex;">
+							<div style="padding-right: 10px;">
+								<i class="fa fa-envelope"></i>
+							</div>
+							<div>
+								<a href="mailto:miscanti@valcor.cl">miscanti@valcor.cl</a><br><br>
+							</div>
+						</div>
+						<div style="display: flex;">
+							<div style="padding-right: 10px;">
+								<i class="fa fa-clock-o" aria-hidden="true"></i>
+							</div>
+							<div>
+								<strong>Horario de Atención</strong>
+								<div class="b-blog-short-post__item_date f-blog-short-post__item_date">
+									Lunes a viernes<br>
+									09:00 Hrs. - 13:00 Hrs.<br>
+									14:30 Hrs. - 18:30 Hrs.<br><br>
+									Sábados<br>
+									09:00 Hrs. - 14:00 Hrs.
+								</div>
+							</div>
+						</div>
+                    </div>
                 </div>
             </div>
         </footer>
+
+        <!-- Whatsapp area -->
+        <a id="wz-button" href="https://api.whatsapp.com/send?phone=56957410727&text=Hola+Valcor%2C+quiero+pedir+una+hora" target="_blank">
+            <img src="assets/img/whatsapp/icon.png" alt="">
+        </a>
+        <style>
+            #wz-button {
+                position: fixed;
+                bottom: 20px;
+                left: 20px;
+                z-index: 100;
+                cursor: pointer;
+            }
+            #wz-button img {
+                width: 60px;
+            }
+        </style>
+        <script src="/assets/js/popper.min.js"></script>
+        <script src="/assets/js/tippy-bundle.umd.min.js"></script>
+        <script>
+            tippy('#wz-button', {
+                content: 'Dudas o agenda tu hora',
+                placement: "right"
+            });
+        </script>
+        <!-- End Whatsapp area -->
+        
         <!-- End Footer Area -->
 
         <!-- Footer Bottom Area -->
