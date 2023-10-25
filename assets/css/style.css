@@ -4541,3 +4541,8 @@ Service Details Area
   color: #ffffff;
   background-color: #94be5d;
 }/*# sourceMappingURL=style.css.map */
+
+.banner-two .default-btn.two{
+  width: 75%;
+  font-size: 18px;
+}
