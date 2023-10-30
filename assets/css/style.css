@@ -239,6 +239,13 @@ Default CSS
 .bg-color-black a, .bg-color-black h4, .bg-color-black p{
   color: white;
 }
+.bg-color-footer{
+  background-image: linear-gradient(to right, #EA6E26, #E0EA27) !important;
+  color: white;
+}
+.bg-color-footer a, .bg-color-footer h4, .bg-color-footer p{
+  color: white;
+}
 
 .bg-color-1 {
   background-color: #F5FBFF;
