@@ -21,47 +21,27 @@ import VirtualPlanification from "./components/VirtualPlanification";
 import Footer from "./components/Footer";
 import WhatsappBtn from "./components/WhatsappBtn";
 import GoTopBtn from "./components/GoTopBtn";
+import ThemeSelector from "./components/ThemeSelector";
 
 function App() {
-  const [loaded, setLoaded] = useState(false);
-  const setLightBehavior = () => {
-    if (window.lightBehaviorLoaded) return;
-    window.setTheme = (themeName) => {
-      localStorage.setItem("covax_theme", themeName);
-      document.documentElement.className = themeName;
-    };
-    window.toggleTheme = () => {
-      if (localStorage.getItem("covax_theme") === "theme-dark") {
-        window.setTheme("theme-light");
-      } else {
-        window.setTheme("theme-dark");
-      }
-    };
-    window
-      .$("body")
-      .append(
-        "<div class='switch-box'><label id='switch' class='switch'><input type='checkbox' onchange='toggleTheme()' id='slider'><span class='slider round'></span></label></div>"
-      );
-    if (localStorage.getItem("covax_theme") === "theme-dark") {
-      window.setTheme("theme-dark");
-      document.getElementById("slider").checked = false;
-    } else {
-      window.setTheme("theme-light");
-      document.getElementById("slider").checked = true;
-    }
-    window.lightBehaviorLoaded = true;
-  };
+  const [imagesArray, setImagesArray] = useState([]);
   useEffect(() => {
-    setLightBehavior();
-    setTimeout(() => {
-      setLoaded(true);
-      window.jQuery(".preloader").fadeOut(500);
-    }, 1000);
+    getImagesArray();
   }, []);
+  const getImagesArray = () => {
+    const images = [];
+    examenesData.forEach((examen) => {
+      images.push(examen.image);
+    });
+    staffData.forEach((staff) => {
+      images.push(staff.image);
+    });
+    setImagesArray(images);
+  };
 
   return (
     <div className="App">
-      <Preloader></Preloader>
+      <Preloader files={imagesArray}></Preloader>
       <Navbar></Navbar>
       <Banner info={headerData}></Banner>
       <DedicatedArea info={examenesData}></DedicatedArea>
@@ -80,6 +60,7 @@ function App() {
         popover="Dudas o agenda tu hora"
       ></WhatsappBtn>
       <GoTopBtn></GoTopBtn>
+      <ThemeSelector></ThemeSelector>
     </div>
   );
 }

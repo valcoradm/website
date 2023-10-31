@@ -1,8 +1,9 @@
 import { useEffect } from "react";
 
 function Staff({ info }) {
+  const $ = window.$;
   useEffect(() => {
-    window.$(".doctors-slider").owlCarousel({
+    $(".doctors-slider").owlCarousel({
       items: 1,
       loop: true,
       margin: 20,
@@ -22,6 +23,9 @@ function Staff({ info }) {
         },
       },
     });
+    return () => {
+      $(".doctors-slider").owlCarousel("destroy");
+    };
   }, []);
   return (
     <div className="doctors-area ptb-100">

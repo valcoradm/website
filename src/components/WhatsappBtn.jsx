@@ -2,13 +2,14 @@ import { useEffect } from "react";
 import "./WhatsappBtn.css";
 function WhatsappBtn({ phone, message, popover }) {
   useEffect(() => {
-    if (window.wzButtonLoaded) return;
-    window.tippy("#wz-button", {
+    const tippyInstance = window.tippy('#wz-button', {
       content: popover,
       placement: "right",
     });
-    window.wzButtonLoaded = true;
-  }, []);
+    return () => {
+      tippyInstance[0].destroy();
+    };
+  }, [popover]);
   return (
     <a
       id="wz-button"

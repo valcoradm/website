@@ -1,8 +1,9 @@
 import { useEffect } from "react";
 
 function ReasonSelectUs({ info }) {
+  const $ = window.$;
   useEffect(() => {
-    window.$(".treatment-slider").owlCarousel({
+    $(".treatment-slider").owlCarousel({
       items: 1,
       loop: true,
       margin: 20,
@@ -22,6 +23,9 @@ function ReasonSelectUs({ info }) {
         },
       },
     });
+    return () => {
+      $(".treatment-slider").owlCarousel("destroy");
+    };
   }, []);
   return (
     <div className="treatment-area ptb-100">
