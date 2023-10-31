@@ -1,0 +1,10 @@
+#wz-button {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 100;
+    cursor: pointer;
+}
+#wz-button img {
+    width: 60px;
+}

@@ -1,0 +1,19 @@
+{
+    "title": "RADIOGRAFÍAS DENTALES Y MAXILOFACIAL",
+    "subtitle": "Diagnósticos certeros para sonrisas saludables: la excelencia en radiología dental para médicos y pacientes que valoran la perfección.",
+    "image": "assets/img/banner/banner-4.jpg",
+    "links":[
+        {
+            "target": "_blank",
+            "href": "https://medico.valcor.app",
+            "icon": "fa fa-user",
+            "text": "SISTEMA DOCTORES EN LÍNEA"
+        },
+        {
+            "target": "_blank",
+            "href": "https://api.whatsapp.com/send?phone=56957410727&amp;text=Hola+Valcor%2C+quiero+pedir+una+hora",
+            "icon": "fa fa-calendar-plus-o",
+            "text": "AGENDA TU VISITA"
+        }
+    ]
+}

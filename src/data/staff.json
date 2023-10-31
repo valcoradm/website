@@ -1,0 +1,32 @@
+[
+    {
+        "image": "assets/img/doctors/doctor-1.jpg",
+        "name": "Dr. Andres Arias",
+        "speciality": "Imagenólogo Maxilofacial",
+        "university": "U. Finis Terrae Chile"
+    },
+    {
+        "image": "assets/img/doctors/doctor-2.jpg",
+        "name": "Dra. Chantal Pon",
+        "speciality": "Imagenóloga Maxilofacial",
+        "university": "U. Finis Terrae Chile"
+    },
+    {
+        "image": "assets/img/doctors/doctor-3.jpg",
+        "name": "Dr. Gonzalo Varela",
+        "speciality": "Imagenólogo Maxilofacial",
+        "university": "U. Finis Terrae Chile"
+    },
+    {
+        "image": "assets/img/doctors/doctor-4.jpg",
+        "name": "Dr. Felipe Barrera",
+        "speciality": "Imagenólogo Maxilofacial",
+        "university": "U. Católica de Chile"
+    },
+    {
+        "image": "assets/img/doctors/doctor-5.jpg",
+        "name": "Dra. Macarena Palma",
+        "speciality": "Imagenóloga Maxilofacial",
+        "university": "U. Católica de Chile"
+    }
+]

@@ -1,0 +1,57 @@
+[
+    {
+        "title": "Retroaveolar",
+        "description": "Radiografía intraoral convencional que muestra en detalle una o más piezas dentarias y la estructura ósea anexa. La imagen obtenida es de gran detalle. No reemplaza a la radiografía panorámica.",
+        "image": "assets/img/dedicated/dedicated-1.jpg"
+    },
+    {
+        "title": "Bite-Wing Bilateral",
+        "description": "Técnica radiográfica intraoral que permite obtener en gran detalle el área interdental de molares y premolares. Con este examen podemos pesquisar caries desde sus inicios hasta sus etapas finales.",
+        "image": "assets/img/dedicated/dedicated-2.jpg"
+    },
+    {
+        "title": "Panorámica",
+        "description": "Radiografía extraoral que permite obtener en un plano, una visión general del maxilar, mandíbula, estructuras óseas y compartimentos anexos. No reemplaza a la radiografía periapical.",
+        "image": "assets/img/dedicated/dedicated-3.jpg"
+    },
+    {
+        "title": "Telerradiografía",
+        "description": "Técnica radiográfica extraoral que permite caracterizar el perfil del paciente respecto a sus dientes, columna cervical y huesos de la cabezax.",
+        "image": "assets/img/dedicated/dedicated-4.jpg"
+    },
+    {
+        "title": "NO DATA",
+        "description": "NO DATA 1.",
+        "image": "https://placehold.co/575x575"
+    },
+    {
+        "title": "NO DATA",
+        "description": "NO DATA 2.",
+        "image": "https://placehold.co/575x575"
+    },
+    {
+        "title": "NO DATA",
+        "description": "NO DATA 3.",
+        "image": "https://placehold.co/575x575"
+    },
+    {
+        "title": "NO DATA",
+        "description": "NO DATA 4.",
+        "image": "https://placehold.co/575x575"
+    },
+    {
+        "title": "NO DATA",
+        "description": "NO DATA 5.",
+        "image": "https://placehold.co/575x575"
+    },
+    {
+        "title": "NO DATA",
+        "description": "NO DATA 6.",
+        "image": "https://placehold.co/575x575"
+    },
+    {
+        "title": "NO DATA",
+        "description": "NO DATA 7.",
+        "image": "https://placehold.co/575x575"
+    }
+]
