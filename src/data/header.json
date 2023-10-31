@@ -10,8 +10,8 @@
             "text": "SISTEMA DOCTORES EN LÍNEA"
         },
         {
-            "target": "_blank",
-            "href": "https://api.whatsapp.com/send?phone=56957410727&amp;text=Hola+Valcor%2C+quiero+pedir+una+hora",
+            "target": "",
+            "href": "/#Appointment",
             "icon": "fa fa-calendar-plus-o",
             "text": "AGENDA TU VISITA"
         }
