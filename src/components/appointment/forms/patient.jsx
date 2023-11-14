@@ -1,45 +1,113 @@
 import React, { useEffect, useState } from "react";
-import { Checkbox, FormControlLabel, TextField } from "@mui/material";
+import {
+  Box,
+  Button,
+  Checkbox,
+  CircularProgress,
+  FormControlLabel,
+  TextField,
+} from "@mui/material";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import Validator from "../../../util/Validators";
 
 const Patient = () => {
   const [rutOrPassport, setRutOrPassport] = useState();
-  const [identificador, setIdentificador] = useState();
+  const [identificador, setIdentificador] = useState("rut");
+  const [error, setError] = useState(null);
+  const [isSearching, setIsSearching] = useState(false);
+  useEffect(() => {
+    setRutOrPassport("");
+  }, [identificador]);
+  const search = () => {
+    if(error) return;
+    setIsSearching(true);
+  };
   return (
     <div>
-      <TextField
-        required
-        value={rutOrPassport}
-        onChange={(evt) => setRutOrPassport(evt.target.value)}
-        id="outlined-required"
-        label="Required"
-      />
-      <FormControlLabel
-        control={
-          <Checkbox
-            defaultChecked
-            checked={identificador === "rut"}
-            onChange={() => {
-              setIdentificador("rut");
-            }}
-            onBlur={()=>{
-              
-            }}
-          />
-        }
-        label="Rut"
-      />
-      <FormControlLabel
-        control={
-          <Checkbox
-            defaultChecked
-            checked={identificador === "passport"}
-            onChange={() => {
-              setIdentificador("passport");
-            }}
-          />
-        }
-        label="Pasaporte"
-      />
+      <Box sx={{ display: "flex", flexDirection: "row" }}>
+        <TextField
+          required
+          value={rutOrPassport}
+          onChange={(evt) => {
+            if (identificador === "rut") {
+              return setRutOrPassport(
+                evt.target.value.replace(/[^0-9kK]/g, "")
+              );
+            }
+            setRutOrPassport(evt.target.value);
+          }}
+          id="outlined-required"
+          helperText={error}
+          error={error}
+          label={identificador === "rut" ? "Rut" : "Pasaporte"}
+          onBlur={() => {
+            if (rutOrPassport.length < 3) {
+              setError(`El ${identificador} debe tener al menos 3 caracteres`);
+              return;
+            }
+            setError(null);
+            if (identificador !== "rut") return;
+            let rutNumero = rutOrPassport.slice(0, -1);
+            let rutVerificador = rutOrPassport.slice(-1);
+            let rutFormateado =
+              rutNumero.replace(/\B(?=(\d{3})+(?!\d))/g, ".") +
+              "-" +
+              rutVerificador;
+            rutFormateado = rutFormateado.toUpperCase();
+            setRutOrPassport(rutFormateado);
+            if (!Validator.rut(rutFormateado)) {
+              setError("Rut inválido");
+            }
+          }}
+          onFocus={() => {
+            if (identificador !== "rut") return;
+            setRutOrPassport(
+              rutOrPassport.replace(/\./g, "").replace(/-/g, "")
+            );
+          }}
+        />
+      </Box>
+      <Box sx={{ display: "flex", flexDirection: "row" }}>
+        <FormControlLabel
+          control={
+            <Checkbox
+              defaultChecked
+              checked={identificador === "rut"}
+              onChange={() => {
+                setIdentificador("rut");
+              }}
+            />
+          }
+          label="Rut"
+        />
+        <FormControlLabel
+          control={
+            <Checkbox
+              defaultChecked
+              checked={identificador === "pasaporte"}
+              onChange={() => {
+                setIdentificador("pasaporte");
+              }}
+            />
+          }
+          label="Pasaporte"
+        />
+      </Box>
+      <Box sx={{ display: "flex", flexDirection: "row" }}>
+        <Button
+          variant="outlined"
+          endIcon={<ArrowForwardIosIcon />}
+          onClick={search}
+          disabled={isSearching}
+        >
+          {isSearching && (
+            <>
+              <CircularProgress size={12} color="success" /> &nbsp;{" "}
+            </>
+          )}
+          Ingresar
+        </Button>
+      </Box>
     </div>
   );
 };
