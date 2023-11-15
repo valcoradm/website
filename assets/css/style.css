@@ -2660,7 +2660,7 @@ Offers Area CSS
   border-radius: 20px;
   width: 100%;
   height: 100%;
-  left: -35px;
+  right: -35px;
   bottom: -35px;
   z-index: -1;
   animation: moveLeftBounce 3s linear infinite;
