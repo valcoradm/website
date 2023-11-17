@@ -92,6 +92,9 @@ img {
   color: #292323;
   font-weight: 700;
 }
+h1 {
+  line-height: 1 !important;
+}
 .h1:last-child, .h2:last-child, .h3:last-child, .h4:last-child, .h5:last-child, .h6:last-child, h1:last-child, h2:last-child, h3:last-child, h4:last-child, h5:last-child, h6:last-child {
   margin-bottom: 0;
 }
@@ -237,6 +240,13 @@ Default CSS
   color: white;
 }
 .bg-color-black a, .bg-color-black h4, .bg-color-black p{
+  color: white;
+}
+.bg-color-footer{
+  background-image: linear-gradient(to right, #EA6E26, #E0EA27) !important;
+  color: white;
+}
+.bg-color-footer a, .bg-color-footer h4, .bg-color-footer p{
   color: white;
 }
 
@@ -2650,7 +2660,7 @@ Offers Area CSS
   border-radius: 20px;
   width: 100%;
   height: 100%;
-  left: -35px;
+  right: -35px;
   bottom: -35px;
   z-index: -1;
   animation: moveLeftBounce 3s linear infinite;
@@ -4541,3 +4551,12 @@ Service Details Area
   color: #ffffff;
   background-color: #94be5d;
 }/*# sourceMappingURL=style.css.map */
+
+.banner-two .default-btn.two{
+  width: 75%;
+  font-size: 18px;
+}
+
+#main_banner {
+  text-align: center !important;
+}
