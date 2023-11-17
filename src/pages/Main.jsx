@@ -43,14 +43,14 @@ function Main() {
       <Navbar></Navbar>
       <Banner info={headerData}></Banner>
       <DedicatedArea info={examenesData}></DedicatedArea>
+      <VirtualPlanification></VirtualPlanification>
       <AgencyArea></AgencyArea>
-      <ReasonSelectUs info={razonesParaSeleccionarnosData}></ReasonSelectUs>
-      <WorkWithUs></WorkWithUs>
-      <Staff info={staffData}></Staff>
       <OfferArea></OfferArea>
+      <ReasonSelectUs info={razonesParaSeleccionarnosData}></ReasonSelectUs>
+      {/* <WorkWithUs></WorkWithUs> */}
+      <Staff info={staffData}></Staff>
       <ClientComments></ClientComments>
       <Faq info={faqData}></Faq>
-      <VirtualPlanification></VirtualPlanification>
       <Footer></Footer>
       <WhatsappBtn
         phone="56957410727"

@@ -3,6 +3,7 @@ import { useEffect } from "react";
 function Faq({ info }) {
   useEffect(() => {
     if (window.loadedAccordion) return;
+    window.loadedAccordion = true;
     const $ = window.$;
     $(".accordion > li:eq(0) .title").addClass("active").next().slideDown();
     $(".accordion .title").click(function (j) {
@@ -23,7 +24,6 @@ function Faq({ info }) {
       }
       dropDown.stop(false, true).slideToggle();
       j.preventDefault();
-      window.loadedAccordion = true;
     });
   }, []);
   return (

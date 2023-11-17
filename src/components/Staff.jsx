@@ -37,23 +37,23 @@ function Staff({ info }) {
         <div className="doctors-slider owl-carousel owl-theme">
           {info.map((item, index) => (
             <div className="doctors-card" key={item.name}>
-              <a href="doctors-details">
+              <div href="#">
                 <img src={item.image} alt="Image" />
-              </a>
+              </div>
               <div className="d-table">
                 <div className="d-table-cell">
                   <div className="caption">
                     <div className="caption-text">
                       <h3>
-                        <a href="doctors-details">{item.name}</a>
+                        <div>{item.name}</div>
                       </h3>
                       <p>{item.speciality}</p>
                       <a href="#">{item.university}</a>
                       <ul className="see-more-button">
                         <li>
-                          <a href="#" target="_blank">
+                          {/* <a href="#" target="_blank">
                             Ver más
-                          </a>
+                          </a> */}
                         </li>
                       </ul>
                     </div>
