@@ -13,11 +13,11 @@ function Footer() {
             <img src="assets/img/sucursal/carrera.png" />
             <br />
             <br />
-            <div style="display: flex;">
-              <div style="padding-right: 10px;">
+            <div style={{display: "flex"}}>
+              <div style={{paddingRight: "10px"}}>
                 <i className="fa fa-map-marker"></i>
               </div>
-              <div style="line-height: 16px;">
+              <div style={{lineHeight: "16px"}}>
                 General Velásquez 890
                 <br />
                 Oficina 304,
@@ -28,8 +28,8 @@ function Footer() {
                 <br />
               </div>
             </div>
-            <div style="display: flex;">
-              <div style="padding-right: 10px;">
+            <div style={{display: "flex"}}>
+              <div style={{paddingRight: "10px"}}>
                 <i className="fa fa-phone"></i>
               </div>
               <div>
@@ -37,8 +37,8 @@ function Footer() {
                 <br />
               </div>
             </div>
-            <div style="display: flex;">
-              <div style="padding-right: 10px;">
+            <div style={{display: "flex"}}>
+              <div style={{paddingRight: "10px"}}>
                 <i className="fa fa-whatsapp"></i>
               </div>
               <div>
@@ -48,8 +48,8 @@ function Footer() {
                 <br />
               </div>
             </div>
-            <div style="display: flex;">
-              <div style="padding-right: 10px;">
+            <div style={{display: "flex"}}>
+              <div style={{paddingRight: "10px"}}>
                 <i className="fa fa-envelope"></i>
               </div>
               <div>
@@ -58,8 +58,8 @@ function Footer() {
                 <br />
               </div>
             </div>
-            <div style="display: flex;">
-              <div style="padding-right: 10px;">
+            <div style={{display: "flex"}}>
+              <div style={{paddingRight: "10px"}}>
                 <i className="fa fa-clock-o" aria-hidden="true"></i>
               </div>
               <div>
@@ -85,11 +85,11 @@ function Footer() {
             <img src="assets/img/sucursal/miscanti.png" />
             <br />
             <br />
-            <div style="display: flex;">
-              <div style="padding-right: 10px;">
+            <div style={{display: "flex"}}>
+              <div style={{paddingRight: "10px"}}>
                 <i className="fa fa-map-marker"></i>
               </div>
-              <div style="line-height: 16px;">
+              <div style={{lineHeight: "16px"}}>
                 Manuel Antonio Matta 2095
                 <br />
                 Oficina 305,
@@ -100,8 +100,8 @@ function Footer() {
                 <br />
               </div>
             </div>
-            <div style="display: flex;">
-              <div style="padding-right: 10px;">
+            <div style={{display: "flex"}}>
+              <div style={{paddingRight: "10px"}}>
                 <i className="fa fa-phone"></i>
               </div>
               <div>
@@ -109,8 +109,8 @@ function Footer() {
                 <br />
               </div>
             </div>
-            <div style="display: flex;">
-              <div style="padding-right: 10px;">
+            <div style={{display: "flex"}}>
+              <div style={{paddingRight: "10px"}}>
                 <i className="fa fa-whatsapp"></i>
               </div>
               <div>
@@ -120,8 +120,8 @@ function Footer() {
                 <br />
               </div>
             </div>
-            <div style="display: flex;">
-              <div style="padding-right: 10px;">
+            <div style={{display: "flex"}}>
+              <div style={{paddingRight: "10px"}}>
                 <i className="fa fa-envelope"></i>
               </div>
               <div>
@@ -130,8 +130,8 @@ function Footer() {
                 <br />
               </div>
             </div>
-            <div style="display: flex;">
-              <div style="padding-right: 10px;">
+            <div style={{display: "flex"}}>
+              <div style={{paddingRight: "10px"}}>
                 <i className="fa fa-clock-o" aria-hidden="true"></i>
               </div>
               <div>
@@ -157,11 +157,11 @@ function Footer() {
             <img src="assets/img/sucursal/espacio parque.png" />
             <br />
             <br />
-            <div style="display: flex;">
-              <div style="padding-right: 10px;">
+            <div style={{display: "flex"}}>
+              <div style={{paddingRight: "10px"}}>
                 <i className="fa fa-map-marker"></i>
               </div>
-              <div style="line-height: 16px;">
+              <div style={{lineHeight: "16px"}}>
                 Bartolome Vivar 1580,
                 <br />
                 Oficina 205,
@@ -172,8 +172,8 @@ function Footer() {
                 <br />
               </div>
             </div>
-            <div style="display: flex;">
-              <div style="padding-right: 10px;">
+            <div style={{display: "flex"}}>
+              <div style={{paddingRight: "10px"}}>
                 <i className="fa fa-phone"></i>
               </div>
               <div>
@@ -181,8 +181,8 @@ function Footer() {
                 <br />
               </div>
             </div>
-            <div style="display: flex;">
-              <div style="padding-right: 10px;">
+            <div style={{display: "flex"}}>
+              <div style={{paddingRight: "10px"}}>
                 <i className="fa fa-whatsapp"></i>
               </div>
               <div>
@@ -192,8 +192,8 @@ function Footer() {
                 <br />
               </div>
             </div>
-            <div style="display: flex;">
-              <div style="padding-right: 10px;">
+            <div style={{display: "flex"}}>
+              <div style={{paddingRight: "10px"}}>
                 <i className="fa fa-envelope"></i>
               </div>
               <div>
@@ -202,8 +202,8 @@ function Footer() {
                 <br />
               </div>
             </div>
-            <div style="display: flex;">
-              <div style="padding-right: 10px;">
+            <div style={{display: "flex"}}>
+              <div style={{paddingRight: "10px"}}>
                 <i className="fa fa-clock-o" aria-hidden="true"></i>
               </div>
               <div>
