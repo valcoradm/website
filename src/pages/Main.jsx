@@ -52,11 +52,7 @@ function Main() {
       <ClientComments></ClientComments>
       <Faq info={faqData}></Faq>
       <Footer></Footer>
-      <WhatsappBtn
-        phone="56957410727"
-        message="Hola Valcor, quiero pedir una hora"
-        popover="Dudas o agenda tu hora"
-      ></WhatsappBtn>
+      <WhatsappBtn popover="Dudas o agenda tu hora"/>
       <GoTopBtn></GoTopBtn>
       <ThemeSelector></ThemeSelector>
     </div>

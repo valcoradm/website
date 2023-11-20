@@ -1,3 +1,5 @@
+import WhatsappBtn from "./WhatsappBtn";
+
 function OfferArea() {
   return (
     <div className="offers-area ptb-100">
@@ -49,14 +51,7 @@ function OfferArea() {
                 </li>
               </ul>
               <div className="offers-btn">
-                <a
-                  target="_blank"
-                  href="https://api.whatsapp.com/send?phone=56957410727&amp;text=Hola+Valcor%2C+quiero+pedir+una+hora"
-                  className="default-btn two"
-                >
-                  Agenda tu cita
-                  <span></span>
-                </a>
+              <WhatsappBtn isMain={true}/>
               </div>
             </div>
           </div>
