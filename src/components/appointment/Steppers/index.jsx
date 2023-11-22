@@ -14,6 +14,7 @@ import StepConnector, {
   stepConnectorClasses,
 } from "@mui/material/StepConnector";
 import { AccountCircle } from "@mui/icons-material";
+import { useAppointmentProvider } from "../../../hooks/AppointmentContext";
 
 const QontoStepIconRoot = styled("div")(({ theme, ownerState }) => ({
   color: theme.palette.mode === "dark" ? theme.palette.grey[700] : "#eaeaf0",
@@ -116,10 +117,9 @@ function ColorlibStepIcon(props) {
 
   const icons = {
     1: <AccountCircle />,
-    2: <ListAltIcon />,
-    3: <LocationOnIcon />,
-    4: <TodayIcon />,
-    5: <BookmarkAddedIcon />,
+    2: <LocationOnIcon />,
+    3: <TodayIcon />,
+    4: <BookmarkAddedIcon />,
   };
 
   return (
@@ -152,14 +152,22 @@ ColorlibStepIcon.propTypes = {
   icon: PropTypes.node,
 };
 
-const steps = ["Identificación", "Orden", "Sucursal", "Hora", "Confirmación"];
+const steps = ["Identificación", "Sucursal", "Hora", "Confirmación"];
 
 export default function Steppers({ step }) {
+  const { state } = useAppointmentProvider();
+  const stateMap = {
+    0: 0,
+    1: 0,
+    2: 1,
+    3: 2,
+    4: 3,
+  };
   return (
     <Stack sx={{ width: "100%" }} spacing={4}>
       <Stepper
         alternativeLabel
-        activeStep={step}
+        activeStep={stateMap[state.step]}
         connector={<ColorlibConnector />}
       >
         {steps.map((label) => (

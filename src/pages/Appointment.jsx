@@ -5,6 +5,8 @@ import Steppers from "../components/appointment/Steppers";
 import Patient from "../components/appointment/forms/patient";
 import { Box } from "@mui/material";
 import PatientExtraData from "../components/appointment/forms/patientExtraData";
+import { AppointmentProvider } from "../hooks/AppointmentContext";
+import AppointmentActionFlow from "../components/appointment/forms/ActionFlow";
 
 const Appointment = () => {
   const [step, setStep] = React.useState(0);
@@ -16,19 +18,10 @@ const Appointment = () => {
   return (
     <div>
       {/* <Navbar /> */}
-      <Steppers step={step} />
-      <Box
-        display="flex"
-        justifyContent="center"
-        alignItems="center"
-        marginTop={4}
-      >
-        {step === 0 && <><Patient /><PatientExtraData/></>}
-        {step === 1 && <div>Step 1</div>}
-        {step === 2 && <div>Step 2</div>}
-        {step === 3 && <div>Step 3</div>}
-        {step === 4 && <div>Step 4</div>}
-      </Box>
+      <AppointmentProvider>
+        <Steppers />
+        <AppointmentActionFlow />
+      </AppointmentProvider>
     </div>
   );
 };

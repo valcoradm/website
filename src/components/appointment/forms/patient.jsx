@@ -9,8 +9,10 @@ import {
 } from "@mui/material";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import Validator from "../../../util/Validators";
+import { useAppointmentProvider } from "../../../hooks/AppointmentContext";
 
 const Patient = () => {
+  const { dispatch } = useAppointmentProvider();
   const [rutOrPassport, setRutOrPassport] = useState();
   const [identificador, setIdentificador] = useState("rut");
   const [error, setError] = useState(null);
@@ -19,13 +21,24 @@ const Patient = () => {
     setRutOrPassport("");
   }, [identificador]);
   const search = () => {
-    if(error) return;
+    if (error) return;
     setIsSearching(true);
+    console.log(rutOrPassport)
+    rutOrPassport === "16.575.223-6"
+      ? dispatch({
+          type: "APPOINTMENT_PATIENT_FOUNDED",
+          payload: { rutOrPassport },
+        })
+      : dispatch({
+          type: "APPOINTMENT_PATIENT_NOT_FOUNDED",
+          payload: { rutOrPassport },
+        });
   };
   return (
     <div>
       <Box sx={{ display: "flex", flexDirection: "row" }}>
         <TextField
+          disabled={isSearching}
           required
           value={rutOrPassport}
           onChange={(evt) => {
@@ -69,6 +82,7 @@ const Patient = () => {
       </Box>
       <Box sx={{ display: "flex", flexDirection: "row" }}>
         <FormControlLabel
+          disabled={isSearching}
           control={
             <Checkbox
               defaultChecked
@@ -81,6 +95,7 @@ const Patient = () => {
           label="Rut"
         />
         <FormControlLabel
+          disabled={isSearching}
           control={
             <Checkbox
               defaultChecked
