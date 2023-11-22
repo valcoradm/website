@@ -19,7 +19,7 @@ function Banner({ info }) {
   }, []);
 
   return (
-    <div className="banner-slide owl-carousel">
+    <div className="banner-slide owl-carousel" style={{textAlign: 'center'}}>
       <div className="banner-two">
         <div className="container">
           <div className="row align-items-center">

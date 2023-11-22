@@ -1,57 +1,62 @@
 [
     {
-        "title": "Retroaveolar",
-        "description": "Radiografía intraoral convencional que muestra en detalle una o más piezas dentarias y la estructura ósea anexa. La imagen obtenida es de gran detalle. No reemplaza a la radiografía panorámica.",
-        "image": "assets/img/dedicated/dedicated-1.jpg"
+        "title": "Radiografía Panorámica-Ortopantomografía",
+        "description": "Radiografía Extraoral que proporciona una visión general de maxilar, mandíbula y estructuras óseas adyacentes. Examen esencial en las diversas áreas de la Odontología.",
+        "image": "/assets/img/dedicated/dedicated-1.jpg"
     },
     {
-        "title": "Bite-Wing Bilateral",
-        "description": "Técnica radiográfica intraoral que permite obtener en gran detalle el área interdental de molares y premolares. Con este examen podemos pesquisar caries desde sus inicios hasta sus etapas finales.",
-        "image": "assets/img/dedicated/dedicated-2.jpg"
+        "title": "Telerradiografía Lateral y Frontal",
+        "description": "Técnica radiográfica extraoral, que permite observar el perfil del paciente y su relación con los dientes, columna cervical y huesos de la cabeza.",
+        "image": "/assets/img/dedicated/dedicated-2.jpg"
     },
     {
-        "title": "Panorámica",
-        "description": "Radiografía extraoral que permite obtener en un plano, una visión general del maxilar, mandíbula, estructuras óseas y compartimentos anexos. No reemplaza a la radiografía periapical.",
-        "image": "assets/img/dedicated/dedicated-3.jpg"
+        "title": "Radiografía Retroalveolar o Periapical",
+        "description": "Radiografía intraoral de alta resolución que muestra con gran detalle 1 o 2 piezas dentarias y su estructura ósea circundante, permitiendo un diagnóstico preciso a nivel dentario.",
+        "image": "/assets/img/dedicated/dedicated-3.jpg"
     },
     {
-        "title": "Telerradiografía",
-        "description": "Técnica radiográfica extraoral que permite caracterizar el perfil del paciente respecto a sus dientes, columna cervical y huesos de la cabezax.",
-        "image": "assets/img/dedicated/dedicated-4.jpg"
+        "title": "Radiografía Bite-Wing Bilateral",
+        "description": "Técnica Radiográfica intraoral que ofrece una visión detallada del área interdental de molares y premolares. Examen fundamental en la detección temprana de caries y evaluación de ajuste de restauraciones.",
+        "image": "/assets/img/dedicated/dedicated-4.jpg"
     },
     {
-        "title": "NO DATA",
-        "description": "NO DATA 1.",
-        "image": "https://placehold.co/575x575"
+        "title": "Tomografía Cone Beam Terceros Molares",
+        "description": "Estudio tridimensional, específico para el estudio de terceros molares, puede ser específico para un molar en campo de adquisición (FOV) de 6x8 cm o para terceros molares bilateral en campo de 8x15 cm. Utilizado para Cirugía Maxilofacial.",
+        "image": "/assets/img/dedicated/dedicated-5.gif"
     },
     {
-        "title": "NO DATA",
-        "description": "NO DATA 2.",
-        "image": "https://placehold.co/575x575"
+        "title": "Tomografía FOV Completo",
+        "description": "Cone Beam de Macizo Craneo facial, maravilloso estudio de 1/3 inferior y medio de los huesos faciales, en donde en un solo barrido tomográfico podemos estudiar mandíbula, maxilares, articulaciones temporomandibulares, huesos propios faciales, piso de órbita. ampliamente utilizado por Ortodoncistas, Cirugía Maxilofacial, Implantología, Rehabilitación Oral compleja. Campo de adquisición (FOV) 13x15 cm.",
+        "image": "/assets/img/dedicated/dedicated-6.gif"
     },
     {
-        "title": "NO DATA",
-        "description": "NO DATA 3.",
-        "image": "https://placehold.co/575x575"
+        "title": "Cone Beam Endo Mode",
+        "description": "Estudio tridimensional específico de uno o dos diente(s) en particular, su campo de 5x5 cm, mediante Vóxel Anisotrópico, permite obtener la máxima ventaja de la tomografía Cone Beam, obteniendo el máximo detalle y potencial de nuestros equipamiento para el estudio de uno o dos diente(s) en específico, es realmente increíble la definición que podemos obtener con este estudio específico. Utilizado para Endodoncia. FOV 5x5 cm.",
+        "image": "/assets/img/dedicated/dedicated-7.gif"
     },
     {
-        "title": "NO DATA",
-        "description": "NO DATA 4.",
-        "image": "https://placehold.co/575x575"
+        "title": "Tomografía Cone Beam Maxilar y Mandibular",
+        "description": "Estudio en tres dimensiones segmentado de los maxilares y mandíbula, ampliamente utilizado por los dentistas. Para el Maxilar utilizamos un campo de adquisición de 8x8 cm abarcado todo el seno maxilar; para la mandíbula un campo de 6x8 cm, con arcadas separadas. ¡ah .. no nos olvidamos de separar los labios! utilizado por Odontología General, Implantología, Rehabilitación Oral y Cirugía Maxilofacial.",
+        "image": "/assets/img/dedicated/dedicated-8.gif"
     },
     {
-        "title": "NO DATA",
-        "description": "NO DATA 5.",
-        "image": "https://placehold.co/575x575"
+        "title": "Tomografía Senosparanasales",
+        "description": "Estudio tridimensional de los Senos paranasales, con bajísimas dosis de radiación, abarcamos el estudio de senos maxilares, seno frontal, celdillas etmoidales, seno esfenoidal piso y techo de órbita. estudio utilizado por Otorrinolaringología. FOV 13x15 cm",
+        "image": "/assets/img/dedicated/dedicated-9.gif"
     },
     {
-        "title": "NO DATA",
-        "description": "NO DATA 6.",
-        "image": "https://placehold.co/575x575"
+        "title": "Tomografía Cone Beam ATM",
+        "description": "Estudio tridimensional tipo Cone beam de las articulaciones temporo-mandibulares, puede ser estudio simple (MIC) o completo (MIC y APERTURA). En el estudio simple, realizamos una adquisición con campo específico Endo-Mode para visualizar en su máximo detalle los perfiles óseos articulares y posibles erosiones; en el estudio complejo, nuestro equipamiento permite visualizar ambas articulaciones de manera simultánea en su movimiento de apertura. Estudio utilizado por Especialistas en Trastornos temporomandibulares y Dolor Orofacial, Ortodoncistas, Cirugía Maxilofacial y Rehabilitación Oral. FOV 5x5 y 8x15 cm.",
+        "image": "/assets/img/dedicated/dedicated-10.gif"
     },
     {
-        "title": "NO DATA",
-        "description": "NO DATA 7.",
-        "image": "https://placehold.co/575x575"
+        "title": "Escáner Facial",
+        "description": "La vanguardia en impresiones digitales 3D del rostro, para representaciones precisas de piel y estructuras faciales.",
+        "image": "/assets/img/dedicated/dedicated-12.jpg"
+    },
+    {
+        "title": "Escáner Intraoral",
+        "description": "Tecnología de avanzada que permite representar en 3D los dientes y encías. Corresponde a una impresión digital de la boca. En VALCOR® contamos con la última novedad en escáner intraoral.",
+        "image": "/assets/img/dedicated/dedicated-11.gif"
     }
 ]

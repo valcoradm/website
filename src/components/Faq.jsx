@@ -3,6 +3,7 @@ import { useEffect } from "react";
 function Faq({ info }) {
   useEffect(() => {
     if (window.loadedAccordion) return;
+    window.loadedAccordion = true;
     const $ = window.$;
     $(".accordion > li:eq(0) .title").addClass("active").next().slideDown();
     $(".accordion .title").click(function (j) {
@@ -23,7 +24,6 @@ function Faq({ info }) {
       }
       dropDown.stop(false, true).slideToggle();
       j.preventDefault();
-      window.loadedAccordion = true;
     });
   }, []);
   return (
@@ -55,7 +55,7 @@ function Faq({ info }) {
           <div class="col-lg-6">
             <div class="frequently-img">
               <div class="main-img">
-                <img src="assets/img/frequently.jpg" alt="Image" />
+                <img src="assets/img/preguntasfrecuentes.jpg" alt="Image" />
               </div>
               <div class="shape-1">
                 <img src="assets/img/shapes/shape-14.png" alt="Shape" />
