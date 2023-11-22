@@ -9,7 +9,7 @@ function OfferArea() {
             <div className="offer-text">
               <div className="section-title-two">
                 <h2>TECNOLOGÍA PREMIUM</h2>
-                <p>
+                <p className="t-justify">
                   Orgullosos en servicio de Vanguardia: valoramos la calidad y
                   tecnología de avanzada, respaldados por equipos importados
                   desde potencias mundiales como Finlandia, nuestras sucursales
@@ -20,7 +20,7 @@ function OfferArea() {
                   en Antofagasta y Calama.
                 </p>
 
-                <p>
+                <p className="t-justify">
                   Nuestro compromiso con la excelencia se refleja en cada paso
                   que damos, desde la adquisición de imágenes digitales de alta
                   resolución hasta la precisa planificación de procedimientos.
@@ -28,7 +28,7 @@ function OfferArea() {
                   inversión en tecnología de punta es un testimonio de ello.
                 </p>
               </div>
-              <ul style={{display: "inline-block"}}>
+              <ul style={{ display: "inline-block" }}>
                 <li>
                   <i class="bx bx-check-circle"></i>
                   OP 300 Instrumentarium
@@ -51,7 +51,7 @@ function OfferArea() {
                 </li>
               </ul>
               <div className="offers-btn">
-              <WhatsappBtn isMain={true}/>
+                <WhatsappBtn isMain={true} />
               </div>
             </div>
           </div>

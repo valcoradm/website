@@ -7,12 +7,13 @@ function VirtualPlanification() {
             <div class="frequently-text">
               <div class="section-title-two">
                 <h2>PLANIFICACION VIRTUAL</h2>
-                <p>
+                <p className="t-justify">
                   En Valcor, entendemos la importancia de la precisión en cada
                   procedimiento odontológico. Es por eso que ofrecemos un
                   servicio especializado de planificación virtual, utilizando
                   tecnología de vanguardia para crear guías quirúrgicas
                   personalizadas.
+                  <br />
                   <br />
                   Nuestro equipo de expertos en radiología dental se enorgullece
                   de proporcionar a los odontólogos herramientas avanzadas que

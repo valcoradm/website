@@ -55,7 +55,7 @@ function Faq({ info }) {
           <div class="col-lg-6">
             <div class="frequently-img">
               <div class="main-img">
-                <img src="assets/img/frequently.jpg" alt="Image" />
+                <img src="assets/img/preguntasfrecuentes.jpg" alt="Image" />
               </div>
               <div class="shape-1">
                 <img src="assets/img/shapes/shape-14.png" alt="Shape" />

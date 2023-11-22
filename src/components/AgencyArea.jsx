@@ -12,22 +12,23 @@ function AgencyArea() {
           <div className="col-lg-6">
             <div className="agency-text">
               <div className="section-title-two">
-                <h2>Comprometidos con la calidad de nuestros servicios</h2>
-                <p>
-                  Estamos convencidos que el talento humano es lo más valioso
-                  que tenemos en la empresa. Nuestro equipo está conformado por
-                  personas dinámicas, especializadas cada una en su labor, con
-                  un alto compromiso en su profesión, reflejando durante sus
-                  actividades, la vivencia de una cultura organizacional
-                  orientada hacia el servicio.
+                <h2 className="t-justify">
+                  COMPROMETIDOS CON LA CALIDAD DE NUESTROS SERVICIOS
+                </h2>
+                <p className="t-justify">
+                  Nuestro equipo está conformado por personas dinámicas, de
+                  invaluable talento humano, ultra especializadas en su labor;
+                  con un alto compromiso en su profesión y entrega hacia
+                  nuestros pacientes. Reflejando la vivencia de una cultura
+                  organizacional orientada hacia el servicio.
                 </p>
 
-                <p>
-                  Para conseguir nuestro propósito, nos preocupamos por
-                  capacitarlos y actualizarlos permanentemente sobre su labor
-                  especifica, de manera que puedan brindar una atención
-                  esmerada, con máxima eficiencia dándole un alto valor agregado
-                  a nuestros pacientes y exámenes.
+                <p className="t-justify">
+                  Innovación y precisión. Pilares sólidos en la elección de la
+                  tecnología que disponemos al servicio de nuestros pacientes.
+                  Diez años de experiencia nos avalan, garantizando resultados
+                  sólidos, respaldados por una seria formación profesional. Tu
+                  elección se traduce en confianza y tranquilidad.
                 </p>
               </div>
 

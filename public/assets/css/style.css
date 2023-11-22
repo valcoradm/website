@@ -4560,3 +4560,7 @@ Service Details Area
 #main_banner {
   text-align: center !important;
 }
+
+.t-justify {
+  text-align: justify;
+}
