@@ -2,19 +2,21 @@ import React, { useState } from "react";
 import { Box, Button, TextField } from "@mui/material";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import { useAppointmentProvider } from "../../../hooks/AppointmentContext";
+import { PhoneInput } from "react-international-phone";
+import 'react-international-phone/style.css';
 
 const PatientExtraData = () => {
   const { dispatch } = useAppointmentProvider();
   const [error, setError] = useState(null);
   const [patientData, setPatientData] = useState({
-    nombre: null,
-    apellidoPaterno: null,
-    apellidoMaterno: null,
-    celular: null,
-    email: null,
+    nombre: "",
+    apellidoPaterno: "",
+    apellidoMaterno: "",
+    celular: "+56",
+    email: "",
   });
   const goNext = () => {
-    if (error) return;
+    // if (error) return;
     dispatch({
       type: "APPOINTMENT_SET_PATIENT_EXTRA_DATA",
       payload: { patientData },
@@ -59,15 +61,12 @@ const PatientExtraData = () => {
             });
           }}
         />
-        <TextField
-          margin="dense"
-          required
-          id="outlined-required"
-          label="Celular"
+        <PhoneInput
+          defaultCountry="cl"
           value={patientData.celular}
-          onChange={(evt) => {
-            setPatientData({ ...patientData, celular: evt.target.value });
-          }}
+          onChange={(phone) =>
+            setPatientData({ ...patientData, celular: phone })
+          }
         />
         <TextField
           margin="dense"

@@ -4,6 +4,7 @@ import PatientExtraData from "./patientExtraData";
 import { useAppointmentProvider } from "../../../hooks/AppointmentContext";
 import SucursalSelect from "./SucursalSelect";
 import AppoinmentSelect from "./AppoinmentSelect";
+import Confirmation from "./Confirmation";
 
 const AppointmentActionFlow = () => {
   const { state, dispatch } = useAppointmentProvider();
@@ -18,7 +19,7 @@ const AppointmentActionFlow = () => {
       {state.step === 1 && <PatientExtraData />}
       {state.step === 2 && <div><SucursalSelect/></div>}
       {state.step === 3 && <AppoinmentSelect />}
-      {state.step === 4 && <div>Step 4</div>}
+      {state.step === 4 && <Confirmation />}
     </Box>
   );
 };

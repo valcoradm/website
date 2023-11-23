@@ -10,6 +10,7 @@ import {
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import Validator from "../../../util/Validators";
 import { useAppointmentProvider } from "../../../hooks/AppointmentContext";
+import ValcorApi from "../../../api/ValcorApi";
 
 const Patient = () => {
   const { dispatch } = useAppointmentProvider();
@@ -23,16 +24,29 @@ const Patient = () => {
   const search = () => {
     if (error) return;
     setIsSearching(true);
-    console.log(rutOrPassport)
-    rutOrPassport === "16.575.223-6"
-      ? dispatch({
+    dispatch({
+      type: "APPOINTMENT_LOADING",
+      payload: { loading: true },
+    });
+    ValcorApi.checkPatientExists(identificador, rutOrPassport).then((res) => {
+      dispatch({
+        type: "APPOINTMENT_LOADING",
+        payload: { loading: false },
+      });
+      if (res.exists) {
+        dispatch({
           type: "APPOINTMENT_PATIENT_FOUNDED",
-          payload: { rutOrPassport },
-        })
-      : dispatch({
-          type: "APPOINTMENT_PATIENT_NOT_FOUNDED",
-          payload: { rutOrPassport },
+          payload: { type: identificador, id: rutOrPassport },
         });
+        return;
+      } else {
+        console.log({ type: identificador, id: rutOrPassport })
+        dispatch({
+          type: "APPOINTMENT_PATIENT_NOT_FOUNDED",
+          payload: { type: identificador, id: rutOrPassport },
+        });
+      }
+    });
   };
   return (
     <div>
