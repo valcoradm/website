@@ -3,6 +3,8 @@ import { useAppointmentProvider } from "../../../hooks/AppointmentContext";
 import { Alert, Button, Chip, Stack } from "@mui/material";
 import ArrowCircleLeftIcon from "@mui/icons-material/ArrowCircleLeft";
 import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
+import LightModeIcon from "@mui/icons-material/LightMode";
+import WbTwilightIcon from "@mui/icons-material/WbTwilight";
 import { useEffect } from "react";
 import ValcorApi from "../../../api/ValcorApi";
 
@@ -20,30 +22,32 @@ const AppoinmentSelect = () => {
       type: "APPOINTMENT_LOADING",
       payload: { loading: true },
     });
-    ValcorApi.getAgenda(state.idSucursal).then((res) => {
-      const horaPorFecha = res.reduce((acc, agenda) => {
-        if (!acc[agenda.Fecha]) {
-          acc[agenda.Fecha] = [];
-        }
-        acc[agenda.Fecha].push(agenda.Hora);
-        return acc;
-      }, {});
-      setHorasPorFecha(horaPorFecha);
-      setFechasDisponibles(Object.keys(horaPorFecha));
-      dispatch({
-        type: "APPOINTMENT_LOADING",
-        payload: { loading: false },
+    ValcorApi.getAgenda(state.idSucursal)
+      .then((res) => {
+        const horaPorFecha = res.reduce((acc, agenda) => {
+          if (!acc[agenda.Fecha]) {
+            acc[agenda.Fecha] = [];
+          }
+          acc[agenda.Fecha].push(agenda.Hora);
+          return acc;
+        }, {});
+        setHorasPorFecha(horaPorFecha);
+        setFechasDisponibles(Object.keys(horaPorFecha));
+        dispatch({
+          type: "APPOINTMENT_LOADING",
+          payload: { loading: false },
+        });
+      })
+      .catch((err) => {
+        dispatch({
+          type: "APPOINTMENT_LOADING",
+          payload: { loading: false },
+        });
+        dispatch({
+          type: "APPOINTMENT_ERROR",
+          payload: { error: err.message },
+        });
       });
-    }).catch((err) => {
-      dispatch({
-        type: "APPOINTMENT_LOADING",
-        payload: { loading: false },
-      });
-      dispatch({
-        type: "APPOINTMENT_ERROR",
-        payload: { error: err.message },
-      });
-    });
   }, []);
   useEffect(() => {
     setFechas(obtenerFechasSemana(sumarDias(new Date(), 7 * page)));
@@ -60,20 +64,35 @@ const AppoinmentSelect = () => {
       date.getFullYear(),
     ].join("/");
   }
+
+  const getHoras = (horas, inicio, fin) => {
+    return horas.filter((hora) => {
+      const horaSplit = hora.split(":");
+      return horaSplit[0] < fin && horaSplit[0] >= inicio;
+    });
+  };
+  const getTurnoDia = () => {
+    const horas = [...horasPorFecha[selectedDate]];
+    return getHoras(horas ?? [], 0, 12);
+  };
+  const getTurnoTarde = () => {
+    const horas = [...horasPorFecha[selectedDate]];
+    return getHoras(horas ?? [], 12, 24);
+  };
   function getRandomNumbers(array, count) {
     const result = [];
-    
+
     // Ensure count is not greater than the array length
     count = Math.min(count, array.length);
-    
+
     // Get random indices and push corresponding elements to the result array
     while (result.length < count) {
       const randomIndex = Math.floor(Math.random() * array.length);
-      if (!result.includes(array[randomIndex])){
+      if (!result.includes(array[randomIndex])) {
         result.push(array[randomIndex]);
       }
     }
-  
+
     return result.sort();
   }
   function sumarDias(fecha, dias) {
@@ -91,6 +110,8 @@ const AppoinmentSelect = () => {
     // Calcular la fecha del lunes de la semana actual
     const lunesSemana = new Date(fechaObj);
     lunesSemana.setDate(fechaObj.getDate() - diaSemana);
+    // sumar las horas utc para que sea la hora de chile
+    lunesSemana.setHours(lunesSemana.getHours() + 4);
 
     // Crear un array para almacenar las fechas de la semana
     const fechasSemana = [];
@@ -130,11 +151,18 @@ const AppoinmentSelect = () => {
             startIcon={<ArrowCircleLeftIcon />}
             disabled={page <= 0}
             onClick={() => setPage(page - 1) || setSelectedDate(null)}
+            style={{ color: page <= 0 ? "": "#E97417" }}
           />
           {fechas.map(
             (fecha, index) =>
               diasSemana[index] && (
                 <Button
+                  variant={selectedDate === fecha ? "contained" : "outlined"}
+                  style={{
+                    borderColor: !fechasDisponibles.includes(fecha) ? '' : "#E97417",
+                    backgroundColor: !fechasDisponibles.includes(fecha) ? '' : selectedDate === fecha ? "#E97417" : "",
+                    color: !fechasDisponibles.includes(fecha) ? '' : selectedDate === fecha ? "white" : "#E97417",
+                  }}
                   onClick={() => setSelectedDate(fecha)}
                   disabled={!fechasDisponibles.includes(fecha)}
                 >
@@ -149,6 +177,7 @@ const AppoinmentSelect = () => {
             disabled={page >= maxPage}
             onClick={() => setPage(page + 1) || setSelectedDate(null)}
             startIcon={<ArrowCircleRightIcon />}
+            style={{ color: page >= maxPage ? "" : "#E97417" }}
           />
         </Stack>
         {!semanaTieneHorasDisponibles && (
@@ -164,9 +193,64 @@ const AppoinmentSelect = () => {
             Horas sugeridas disponibles para: {selectedDate}
           </Alert>
         )}
-        {selectedDate && getRandomNumbers(horasPorFecha[selectedDate], 5).map((hora) => (
-          <Chip label={hora} style={{cursor: "pointer"}} onClick={() => goNext(hora)}/>
-        ))}
+        <Stack
+          direction="row"
+          spacing={0}
+          style={{
+            width: "100%",
+          }}
+        >
+          {selectedDate && (
+            <Stack
+              direction="column"
+              spacing={2}
+              style={{
+                width: "100%",
+                textAlign: "center",
+                borderRight: "1px solid #E97417",
+                paddingRight: "10px",
+              }}
+            >
+              <LightModeIcon style={{ width: "100%", color: "#E97417" }} />
+              {getRandomNumbers(getTurnoDia(), 5).map((hora) => (
+                <Chip
+                  label={hora}
+                  style={{
+                    cursor: "pointer",
+                    backgroundColor: "#cd9c3c",
+                    color: "white",
+                  }}
+                  onClick={() => goNext(hora)}
+                />
+              ))}
+            </Stack>
+          )}
+          {selectedDate && (
+            <Stack
+              direction="column"
+              spacing={2}
+              style={{
+                width: "100%",
+                borderLeft: "1px solid #E97417",
+                paddingLeft: "10px",
+              }}
+            >
+              <WbTwilightIcon style={{ width: "100%", color: "#E97417" }} />
+              {selectedDate &&
+                getRandomNumbers(getTurnoTarde(), 5).map((hora) => (
+                  <Chip
+                    label={hora}
+                    style={{
+                      cursor: "pointer",
+                      backgroundColor: "#cd9c3c",
+                      color: "white",
+                    }}
+                    onClick={() => goNext(hora)}
+                  />
+                ))}
+            </Stack>
+          )}
+        </Stack>
       </Stack>
     </>
   );

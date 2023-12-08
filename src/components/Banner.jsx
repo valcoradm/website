@@ -35,9 +35,6 @@ function Banner({ info }) {
                     </a>
                   </div>
                 ))}
-                <div className="b-two-btn">
-                  <WhatsappBtn isMain={true}></WhatsappBtn>
-                </div>
               </div>
             </div>
 

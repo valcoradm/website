@@ -1,5 +1,4 @@
 import {
-  Backdrop,
   Box,
   CircularProgress,
   Dialog,
@@ -19,6 +18,8 @@ const ACTIONS = {
   SELECT_DATE: "APPOINTMENT_SELECT_DATE",
   LOADING: "APPOINTMENT_LOADING",
   ERROR_RESET: "APPOINTMENT_ERROR_RESET",
+  FORCE_STEP: "APPOINTMENT_FORCE_STEP",
+  RETURN_TO_END: "APPOINTMENT_RETURN_TO_END",
 };
 
 // Reducer
@@ -85,6 +86,19 @@ const reducer = (state, action) => {
         date: null,
         hour: null,
       };
+    case ACTIONS.FORCE_STEP:
+      return {
+        ...state,
+        step: action.payload.step,
+        goToEnd: action.payload.goToEnd,
+      };
+    case ACTIONS.RETURN_TO_END:
+      return {
+        ...state,
+        patientExtraData: action.payload,
+        goToEnd: false,
+        step: 4,
+      };
     default:
       return state;
   }
@@ -104,8 +118,8 @@ const AppointmentProvider = ({ children }) => {
     loading: false,
     date: null,
     hour: null,
+    goToEnd: false,
   });
-  console.log("loading", state.loading);
   return (
     <MyContext.Provider value={{ state, dispatch }}>
       {children}

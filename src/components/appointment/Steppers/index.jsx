@@ -71,13 +71,13 @@ const ColorlibConnector = styled(StepConnector)(({ theme }) => ({
   },
   [`&.${stepConnectorClasses.active}`]: {
     [`& .${stepConnectorClasses.line}`]: {
-      backgroundImage:
-        "linear-gradient( 95deg,rgb(242,113,33) 0%,rgb(233,64,87) 50%,rgb(138,35,135) 100%)",
+      background:
+        "#E97417",
     },
   },
   [`&.${stepConnectorClasses.completed}`]: {
     [`& .${stepConnectorClasses.line}`]: {
-      backgroundImage:
+      background:
         "linear-gradient( 95deg,rgb(242,113,33) 0%,rgb(233,64,87) 50%,rgb(138,35,135) 100%)",
     },
   },
@@ -102,17 +102,33 @@ const ColorlibStepIconRoot = styled("div")(({ theme, ownerState }) => ({
   justifyContent: "center",
   alignItems: "center",
   ...(ownerState.active && {
-    backgroundImage:
-      "linear-gradient( 136deg, rgb(242,113,33) 0%, rgb(233,64,87) 50%, rgb(138,35,135) 100%)",
-    boxShadow: "0 4px 10px 0 rgba(0,0,0,.25)",
+    background:
+      "#E97417",
+    boxShadow: "0 4px 10px 0 rgba(233,116,23,.25)",
   }),
   ...(ownerState.completed && {
-    backgroundImage:
-      "linear-gradient( 136deg, rgb(242,113,33) 0%, rgb(233,64,87) 50%, rgb(138,35,135) 100%)",
+    background:
+      "#E97417",
   }),
 }));
 
 function ColorlibStepIcon(props) {
+  const { dispatch } = useAppointmentProvider();
+  const goTo = (target, completed) => () => {
+    if(!completed) return;
+    const pageIdByStep = {
+      1: 0,
+      2: 2,
+      3: 3,
+      4: 4,
+    }
+    const pageId = pageIdByStep[target];
+    if(pageId === null || pageId === undefined) return;
+    dispatch({
+      type: "APPOINTMENT_FORCE_STEP",
+      payload: { step: pageId, goToEnd: false },
+    });
+  };
   const { active, completed, className } = props;
 
   const icons = {
@@ -127,6 +143,8 @@ function ColorlibStepIcon(props) {
       <ColorlibStepIconRoot
         ownerState={{ completed, active }}
         className={className}
+        toGoId="1"
+        onClick={goTo(props.icon, completed)} 
       >
         {icons[String(props.icon)]}
       </ColorlibStepIconRoot>
@@ -164,7 +182,7 @@ export default function Steppers({ step }) {
     4: 3,
   };
   return (
-    <Stack sx={{ width: "100%" }} spacing={4}>
+    <Stack sx={{ width: "100%" }}  style={{marginBottom: '10px', marginTop: '20px'}} spacing={4}>
       <Stepper
         alternativeLabel
         activeStep={stateMap[state.step]}

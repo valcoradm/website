@@ -13,48 +13,50 @@ const SucursalSelect = () => {
       type: "APPOINTMENT_LOADING",
       payload: { loading: true },
     });
-    ValcorApi.getSucursales().then((res) => {
-      console.log("res",res);
-      setSucursales(res);
-      dispatch({
-        type: "APPOINTMENT_LOADING",
-        payload: { loading: false },
+    ValcorApi.getSucursales()
+      .then((res) => {
+        setSucursales(res);
+        dispatch({
+          type: "APPOINTMENT_LOADING",
+          payload: { loading: false },
+        });
+      })
+      .catch((err) => {
+        dispatch({
+          type: "APPOINTMENT_LOADING",
+          payload: { loading: false },
+        });
+        dispatch({
+          type: "APPOINTMENT_ERROR",
+          payload: { error: err.message },
+        });
       });
-    }).catch((err) => {
-      console.log("err",err);
-      dispatch({
-        type: "APPOINTMENT_LOADING",
-        payload: { loading: false },
-      });
-      dispatch({
-        type: "APPOINTMENT_ERROR",
-        payload: { error: err.message },
-      });
-    });
   }, []);
   const goNext = (id, name) => {
     dispatch({
       type: "APPOINTMENT_SELECT_SUCURSAL",
-      payload: {id, name},
+      payload: { id, name },
     });
   };
   return (
     <>
       <Box sx={{ display: "flex", flexDirection: "column" }}>
         {sucursales.map((sucursal) => (
-          <Button
-            startIcon={<LocationOnIcon />}
-            onClick={()=>goNext(sucursal.id, sucursal.Descripcion)}
-            variant="outlined"
-            sx={{ marginBottom: 2 }}
-          >
-            <Box sx={{ display: "flex", flexDirection: "column" }}>
-              <span style={{ textAlign: "left" }}>{sucursal.Descripcion}</span>
-              <span style={{ textAlign: "left" }}>
-                La direccion de la sucursal
-              </span>
-            </Box>
-          </Button>
+          <Box sx={{ marginBottom: 2, display: "flex", flexDirection: "column" }}>
+            <Button
+              startIcon={<LocationOnIcon />}
+              onClick={() => goNext(sucursal.id, sucursal.Descripcion)}
+              variant="outlined"
+            >
+              <Box sx={{ display: "flex", flexDirection: "column" }}>
+                <span style={{ textAlign: "left" }}>
+                  {sucursal.Descripcion}
+                </span>
+                <span style={{ textAlign: "left" }}></span>
+              </Box>
+            </Button>
+            <small style={{textAlign: "center"}}>{sucursal.Direccion}</small>
+          </Box>
         ))}
       </Box>
     </>

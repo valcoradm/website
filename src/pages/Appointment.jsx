@@ -12,16 +12,27 @@ const Appointment = () => {
   const [step, setStep] = React.useState(0);
 
   useEffect(() => {
+    document.getElementsByTagName("html")[0].classList.remove("theme-dark");
     setStep(0);
     // Reset form
   }, []);
   return (
     <div>
       {/* <Navbar /> */}
-      <AppointmentProvider>
-        <Steppers />
-        <AppointmentActionFlow />
-      </AppointmentProvider>
+      <Box sx={{ display: "flex", flexDirection: "column" }}>
+        <center>
+          <img
+            src="assets/img/logo.png"
+            alt="image"
+            style={{ maxWidth: "300px", marginTop: "30px", marginBottom: "20px" }}
+          ></img>
+          <h1 style={{ marginBottom: "20px", color: '#E97417' }}>AGENDAMIENTO EN LINEA</h1>
+        </center>
+        <AppointmentProvider>
+          <Steppers />
+          <AppointmentActionFlow />
+        </AppointmentProvider>
+      </Box>
     </div>
   );
 };

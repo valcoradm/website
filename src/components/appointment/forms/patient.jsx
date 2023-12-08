@@ -40,7 +40,6 @@ const Patient = () => {
         });
         return;
       } else {
-        console.log({ type: identificador, id: rutOrPassport })
         dispatch({
           type: "APPOINTMENT_PATIENT_NOT_FOUNDED",
           payload: { type: identificador, id: rutOrPassport },
@@ -99,6 +98,7 @@ const Patient = () => {
           disabled={isSearching}
           control={
             <Checkbox
+              style={{ color: '#E97417' }}
               defaultChecked
               checked={identificador === "rut"}
               onChange={() => {
@@ -112,6 +112,7 @@ const Patient = () => {
           disabled={isSearching}
           control={
             <Checkbox
+              style={{ color: '#E97417' }}
               defaultChecked
               checked={identificador === "pasaporte"}
               onChange={() => {
@@ -124,6 +125,7 @@ const Patient = () => {
       </Box>
       <Box sx={{ display: "flex", flexDirection: "row" }}>
         <Button
+          style={{ color: '#E97417', borderColor: '#E97417', width: '100%' }}
           variant="outlined"
           endIcon={<ArrowForwardIosIcon />}
           onClick={search}
