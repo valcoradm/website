@@ -145,8 +145,8 @@ const AppoinmentSelect = () => {
   });
   return (
     <>
-      <Stack direction="column" spacing={2}>
-        <Stack direction="row" spacing={2}>
+      <Stack direction="column" spacing={2} style={{maxWidth: '100%'}}>
+        <Stack direction="row" spacing={2} sx={{ overflow: "auto", maxWidth: "100%" }}>
           <Button
             startIcon={<ArrowCircleLeftIcon />}
             disabled={page <= 0}
@@ -162,6 +162,7 @@ const AppoinmentSelect = () => {
                     borderColor: !fechasDisponibles.includes(fecha) ? '' : "#E97417",
                     backgroundColor: !fechasDisponibles.includes(fecha) ? '' : selectedDate === fecha ? "#E97417" : "",
                     color: !fechasDisponibles.includes(fecha) ? '' : selectedDate === fecha ? "white" : "#E97417",
+                    minWidth: "90px",
                   }}
                   onClick={() => setSelectedDate(fecha)}
                   disabled={!fechasDisponibles.includes(fecha)}
