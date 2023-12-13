@@ -236,6 +236,7 @@ const PatientExtraData = () => {
       </Box>
       <Box sx={{ display: "flex", flexDirection: "row" }}>
         <Button
+          style={{ color: '#E97417', borderColor: '#E97417', width: '100%' }}
           variant="outlined"
           endIcon={<ArrowForwardIosIcon />}
           onClick={goNext}

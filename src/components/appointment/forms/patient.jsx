@@ -139,6 +139,9 @@ const Patient = () => {
           Ingresar
         </Button>
       </Box>
+      <Box sx={{ display: "flex", flexDirection: "row", maxWidth:"200px", textAlign: "center", marginTop: "20px" }}>
+        <small>Si eres extranjero puedes utilizar tu número de documento nacional (pais de procedencia) o el de tu pasaporte, seleccionando la casilla pasaporte</small>  
+      </Box>
     </div>
   );
 };

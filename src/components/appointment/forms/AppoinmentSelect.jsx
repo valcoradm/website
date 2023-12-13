@@ -73,11 +73,11 @@ const AppoinmentSelect = () => {
   };
   const getTurnoDia = () => {
     const horas = [...horasPorFecha[selectedDate]];
-    return getHoras(horas ?? [], 0, 12);
+    return getHoras(horas ?? [], 0, 14);
   };
   const getTurnoTarde = () => {
     const horas = [...horasPorFecha[selectedDate]];
-    return getHoras(horas ?? [], 12, 24);
+    return getHoras(horas ?? [], 14, 24);
   };
   function getRandomNumbers(array, count) {
     const result = [];

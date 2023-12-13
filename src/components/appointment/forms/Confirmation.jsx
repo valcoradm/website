@@ -7,7 +7,7 @@ import RestartAltIcon from "@mui/icons-material/RestartAlt";
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
 import PhoneAndroidIcon from "@mui/icons-material/PhoneAndroid";
 import EmailIcon from "@mui/icons-material/Email";
-import TagFacesIcon from '@mui/icons-material/TagFaces'
+import TagFacesIcon from "@mui/icons-material/TagFaces";
 import { useAppointmentProvider } from "../../../hooks/AppointmentContext";
 import {
   Alert,
@@ -125,14 +125,13 @@ const Confirmation = () => {
         });
         setSaved(true);
 
-        ValcorApi.getSucursales()
-          .then((res) => {
-            setSucursales(res);
-            dispatch({
-              type: "APPOINTMENT_LOADING",
-              payload: { loading: false },
-            });
-          })
+        ValcorApi.getSucursales().then((res) => {
+          setSucursales(res);
+          dispatch({
+            type: "APPOINTMENT_LOADING",
+            payload: { loading: false },
+          });
+        });
       })
       .catch((err) => {
         dispatch({
@@ -179,7 +178,14 @@ const Confirmation = () => {
               </TableCell>
               <TableCell scope="row">{state.patient.id}</TableCell>
               <TableCell scope="row">
-                <Button onClick={volverASeleccionPaciente}>
+                <Button
+                  onClick={volverASeleccionPaciente}
+                  style={{
+                    color: "#E97417",
+                    borderColor: "#E97417",
+                    width: "100%",
+                  }}
+                >
                   <RestartAltIcon />
                 </Button>
               </TableCell>
@@ -197,7 +203,14 @@ const Confirmation = () => {
                     {state.patientExtraData.patientData.apellidoMaterno}
                   </TableCell>
                   <TableCell scope="row">
-                    <Button onClick={volverAEdicionPaciente}>
+                    <Button
+                      onClick={volverAEdicionPaciente}
+                      style={{
+                        color: "#E97417",
+                        borderColor: "#E97417",
+                        width: "100%",
+                      }}
+                    >
                       <EditIcon />
                     </Button>
                   </TableCell>
@@ -211,7 +224,14 @@ const Confirmation = () => {
                     {state.patientExtraData.patientData.celular}
                   </TableCell>
                   <TableCell scope="row">
-                    <Button onClick={volverAEdicionPaciente}>
+                    <Button
+                      onClick={volverAEdicionPaciente}
+                      style={{
+                        color: "#E97417",
+                        borderColor: "#E97417",
+                        width: "100%",
+                      }}
+                    >
                       <EditIcon />
                     </Button>
                   </TableCell>
@@ -225,7 +245,14 @@ const Confirmation = () => {
                     {state.patientExtraData.patientData.email}
                   </TableCell>
                   <TableCell scope="row">
-                    <Button onClick={volverAEdicionPaciente}>
+                    <Button
+                      onClick={volverAEdicionPaciente}
+                      style={{
+                        color: "#E97417",
+                        borderColor: "#E97417",
+                        width: "100%",
+                      }}
+                    >
                       <EditIcon />
                     </Button>
                   </TableCell>
@@ -241,7 +268,14 @@ const Confirmation = () => {
               <TableCell scope="row">Sucursal</TableCell>
               <TableCell scope="row">{state.nombreSucursal}</TableCell>
               <TableCell scope="row">
-                <Button onClick={volverSeleccionSucursal}>
+                <Button
+                  onClick={volverSeleccionSucursal}
+                  style={{
+                    color: "#E97417",
+                    borderColor: "#E97417",
+                    width: "100%",
+                  }}
+                >
                   <EditIcon />
                 </Button>
               </TableCell>
@@ -257,7 +291,14 @@ const Confirmation = () => {
                 {state.date} {state.hour}
               </TableCell>
               <TableCell scope="row">
-                <Button onClick={volverSeleccionHora}>
+                <Button
+                  onClick={volverSeleccionHora}
+                  style={{
+                    color: "#E97417",
+                    borderColor: "#E97417",
+                    width: "100%",
+                  }}
+                >
                   <EditCalendarIcon />
                 </Button>
               </TableCell>
@@ -265,6 +306,7 @@ const Confirmation = () => {
           </TableBody>
         </Table>
         <Button
+          style={{ color: "#E97417", borderColor: "#E97417", width: "100%" }}
           disabled={state.loading || error}
           onClick={save}
           variant="outlined"
@@ -276,11 +318,19 @@ const Confirmation = () => {
     );
   }
   return (
-    <Box sx={{ display: "flex", flexDirection: "column" }} style={{textAlign: "center", maxWidth: "600px"}}>
-      <TagFacesIcon style={{fontSize: "90px", color: "#E97417", textAlign: "center", width: "100%"}} />
-      <h2>
-      ¡Gracias por elegir Valcor para tu cita de radiología dental!
-      </h2>
+    <Box
+      sx={{ display: "flex", flexDirection: "column" }}
+      style={{ textAlign: "center", maxWidth: "600px" }}
+    >
+      <TagFacesIcon
+        style={{
+          fontSize: "90px",
+          color: "#E97417",
+          textAlign: "center",
+          width: "100%",
+        }}
+      />
+      <h2>¡Gracias por elegir Valcor para tu cita de radiología dental!</h2>
       <br />
       <span>
         Apreciamos tu confianza en nuestros servicios. Confirmaremos tu cita a
@@ -306,7 +356,17 @@ const Confirmation = () => {
             // startIcon={<LocationOnIcon />}
             // onClick={() => goNext(sucursal.id, sucursal.Descripcion)}
             variant="contained"
-            style={{textTransform: "capitalize", backgroundColor: "#E97417", color: "white", fontWeight: "bold", fontSize: "18px", padding: "10px", textDecoration: "none", textAlign: "center", width: "100%"}}
+            style={{
+              textTransform: "capitalize",
+              backgroundColor: "#E97417",
+              color: "white",
+              fontWeight: "bold",
+              fontSize: "18px",
+              padding: "10px",
+              textDecoration: "none",
+              textAlign: "center",
+              width: "100%",
+            }}
           >
             Sucursal {sucursal.Descripcion.toLowerCase()}
           </Link>

@@ -42,8 +42,15 @@ const SucursalSelect = () => {
     <>
       <Box sx={{ display: "flex", flexDirection: "column" }}>
         {sucursales.map((sucursal) => (
-          <Box sx={{ marginBottom: 2, display: "flex", flexDirection: "column" }}>
+          <Box
+            sx={{ marginBottom: 2, display: "flex", flexDirection: "column" }}
+          >
             <Button
+              style={{
+                color: "#E97417",
+                borderColor: "#E97417",
+                width: "100%",
+              }}
               startIcon={<LocationOnIcon />}
               onClick={() => goNext(sucursal.id, sucursal.Descripcion)}
               variant="outlined"
@@ -55,7 +62,7 @@ const SucursalSelect = () => {
                 <span style={{ textAlign: "left" }}></span>
               </Box>
             </Button>
-            <small style={{textAlign: "center"}}>{sucursal.Direccion}</small>
+            <small style={{ textAlign: "center" }}>{sucursal.Direccion}</small>
           </Box>
         ))}
       </Box>
