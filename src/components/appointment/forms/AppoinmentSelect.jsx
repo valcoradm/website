@@ -224,6 +224,12 @@ const AppoinmentSelect = () => {
                   onClick={() => goNext(hora)}
                 />
               ))}
+              {selectedDate &&
+                getTurnoDia().length === 0 && (
+                  <Alert severity="warning">
+                    sin horas disponibles
+                  </Alert>
+                )}
             </Stack>
           )}
           {selectedDate && (
@@ -249,6 +255,12 @@ const AppoinmentSelect = () => {
                     onClick={() => goNext(hora)}
                   />
                 ))}
+                {selectedDate &&
+                getTurnoTarde().length === 0 && (
+                  <Alert severity="warning">
+                    sin horas disponibles
+                  </Alert>
+                )}
             </Stack>
           )}
         </Stack>
