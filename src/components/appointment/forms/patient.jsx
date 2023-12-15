@@ -14,14 +14,19 @@ import ValcorApi from "../../../api/ValcorApi";
 
 const Patient = () => {
   const { dispatch } = useAppointmentProvider();
-  const [rutOrPassport, setRutOrPassport] = useState();
+  const [rutOrPassport, setRutOrPassport] = useState("");
   const [identificador, setIdentificador] = useState("rut");
   const [error, setError] = useState(null);
   const [isSearching, setIsSearching] = useState(false);
   useEffect(() => {
     setRutOrPassport("");
+    setError(null);
   }, [identificador]);
   const search = () => {
+    if(rutOrPassport.length === 0){
+      setError(`El ${identificador} es requerido`);
+      return;
+    }
     if (error) return;
     setIsSearching(true);
     dispatch({
