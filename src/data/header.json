@@ -11,7 +11,7 @@
         },
         {
             "target": "",
-            "href": "/#appointment",
+            "href": "/appointment",
             "icon": "fa fa-calendar-plus-o",
             "text": "AGENDA TU VISITA"
         }
