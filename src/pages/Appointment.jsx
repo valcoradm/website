@@ -7,11 +7,13 @@ import { Box } from "@mui/material";
 import PatientExtraData from "../components/appointment/forms/patientExtraData";
 import { AppointmentProvider } from "../hooks/AppointmentContext";
 import AppointmentActionFlow from "../components/appointment/forms/ActionFlow";
+import ReactGA from 'react-ga';
 
 const Appointment = () => {
   const [step, setStep] = React.useState(0);
 
   useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search);
     document.getElementsByTagName("html")[0].classList.remove("theme-dark");
     setStep(0);
     // Reset form
