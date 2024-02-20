@@ -40,7 +40,7 @@ function ClientComments({ comments = [] }) {
                 </a>
               </div>
 
-              <p>{description}</p>
+              <p style={{fontStyle: "italic"}}>"{description}"</p>
 
               <div class="clients-name">
                 <h3>{name}</h3>
