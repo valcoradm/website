@@ -21,10 +21,12 @@ import Footer from "../components/Footer";
 import WhatsappBtn from "../components/WhatsappBtn";
 import GoTopBtn from "../components/GoTopBtn";
 import ThemeSelector from "../components/ThemeSelector";
+import ReactGA from 'react-ga';
 
 function Main() {
   const [imagesArray, setImagesArray] = useState([]);
   useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search);
     getImagesArray();
   }, []);
   const getImagesArray = () => {

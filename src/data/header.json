@@ -8,6 +8,12 @@
             "href": "https://medico.valcor.app",
             "icon": "fa fa-user",
             "text": "SISTEMA DOCTORES EN LÍNEA"
+        },
+        {
+            "target": "",
+            "href": "/appointment",
+            "icon": "fa fa-calendar-plus-o",
+            "text": "AGENDA TU VISITA"
         }
     ]
 }

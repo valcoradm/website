@@ -28,18 +28,23 @@ function App() {
         });
     }
   }, []);
-  const router = createHashRouter([
+
+  const browserRouter = createBrowserRouter([
     {
       path: "Appointment",
       element: <AppointmentPage />,
     },
     {
       path: "/",
+      element: (window?.location?.hash?.toLowerCase())  === '#appointment' ? <AppointmentPage /> : <MainPage />,
+    },
+    {
+      path: "*",
       element: <MainPage />,
     },
   ]);
 
-  return <RouterProvider router={router} />;
+  return <RouterProvider router={browserRouter} />;
 }
 
 export default App;
