@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 import Banner from "../components/Banner";
 import DedicatedArea from "../components/DedicatedArea";
 import examenesData from "../data/examenes.json";
+import clientCommentsData from "../data/comentariosClientes.json";
 import headerData from "../data/header.json";
 import razonesParaSeleccionarnosData from "../data/razonesParaSeleccionarnos.json";
 import staffData from "../data/staff.json";
@@ -49,7 +50,7 @@ function Main() {
       <ReasonSelectUs info={razonesParaSeleccionarnosData}></ReasonSelectUs>
       {/* <WorkWithUs></WorkWithUs> */}
       <Staff info={staffData}></Staff>
-      <ClientComments></ClientComments>
+      <ClientComments comments={clientCommentsData}></ClientComments>
       <Faq info={faqData}></Faq>
       <Footer></Footer>
       <WhatsappBtn popover="Dudas o agenda tu hora"/>

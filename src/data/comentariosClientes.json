@@ -1,0 +1,74 @@
+[
+    {
+        "name": "Dr. Michael Arancibia",
+        "title": "CAIMA Implantes Dentales",
+        "stars": 5,
+        "video": "https://www.youtube.com/watch?v=L5AGgzzUNP4",
+        "description": "Valcor nos ayuda mucho con su tecnología y su gran equipo de profesionales a la hora de adquirir imágenes para planificar en conjunto nuestras guías quirúrgicas para la implantología dental.",
+        "image": "assets/img/testimonials/client-1.jpg"
+    },
+    {
+        "name": "Dra. Andrea Viacava",
+        "title": "AVO Ortodoncia",
+        "stars": 5,
+        "video": "https://www.youtube.com/shorts/hXTpeaww9_Y",
+        "description": "Valcor me entrega las herramientas digitales necesarias que necesitamos hoy en día para poder hacer un correcto diagnóstico y un plan de tratamiento para los pacientes.",
+        "image": "assets/img/testimonials/client-2.jpg"
+    },
+    {
+        "name": "Dra. Lucia Flores",
+        "title": "Clínica Mykonos",
+        "stars": 5,
+        "video": "https://www.youtube.com/shorts/NgGZM4-Ec-I",
+        "description": "Cuentan con equipos de última generación con tecnología de punta, además tenemos acceso a una plataforma virtual en la que podemos emitir órdenes, llevar un registro y ver las radiografías en un mismo lugar.",
+        "image": "assets/img/testimonials/client-3.jpg"
+    },
+    {
+        "name": "Dr. Jaime Zambrano",
+        "title": "Bencodent",
+        "stars": 5,
+        "video": "https://www.youtube.com/watch?v=Rj_-GwSsOto",
+        "description": "Me permiten trabajar de manera más dinámica la planificación de mis tratamientos de implantes y la fabricación de guías quirúrgicas con su tecnología de impresoras 3D. Además de ayudarme a que mis tratamientos sean más precisos.",
+        "image": "assets/img/testimonials/client-5.jpg"
+    },
+    {
+        "name": "Dr. Luis Burgos",
+        "title": "Ortodoncia Taltal",
+        "stars": 5,
+        "video": "https://www.youtube.com/shorts/uv5DTMvj86w",
+        "description": "Aseguran una excelente atención a los pacientes y un buen servicio de informe radiológico tanto como en los exámenes 2D y 3D. Entregando de esta manera un buen complemento al diagnóstico clínico que hacemos a los pacientes.",
+        "image": "assets/img/testimonials/client-4.jpg"
+    },
+    {
+        "name": "William Paz",
+        "title": "Clinica Dental William Paz",
+        "stars": 5,
+        "video": "https://youtube.com/shorts/GdYFozst8t8?si=Lq3wWLKqkZdAT7Uz",
+        "description": "Buen soporte técnico, apoyo en los diagnósticos. Siempre están atentos a solucionarnos las dudas y apoyarnos en los procedimientos quirúrgicos que podamos tener en la consulta.",
+        "image": "assets/img/testimonials/william-paz.png"
+    },
+    {
+        "name": "Domingo Poblete",
+        "title": "",
+        "stars": 5,
+        "video": "https://youtube.com/shorts/vSC2U11e0g4?si=bbUhk_nft5W7F9Q6",
+        "description": "Exámenes de muy buena calidad en la parte tanto 2D como 3D. La plataforma medica es una gran ayuda y una muy buena herramienta, para primero, reducir la contaminación producto de las placas, y lo segundo es muy amigable y fácil de usar.",
+        "image": "assets/img/testimonials/domingo-poblete.png"
+    },
+    {
+        "name": "Claudio Villa",
+        "title": "QUEBARDENT",
+        "stars": 5,
+        "video": "https://youtube.com/shorts/41Eb-15Lzww?si=jEWsQcam8OfTsyDe",
+        "description": "Sistema digital que utilizan de excelencia, la plataforma que tienen en el sistema de fácil uso. Y también por que los resultados a través de la radiografía son de excelente calidad.",
+        "image": "assets/img/testimonials/quebardent.png"
+    },
+    {
+        "name": "Evelyn Astudillo",
+        "title": "Odontopediatría Antofagasta",
+        "stars": 5,
+        "video": "https://youtu.be/swPt7ke-Kgs?si=UitkMs9lPFPAPksc",
+        "description": "Lo más importante para mí es el esfuerzo que ponen en Valcor para atender a mis pacientes. En Valcor saben lo importante que es para mi anticipar, contener y explicarles a los niños.",
+        "image": "assets/img/testimonials/odontopediatria-antofagasta.jpg"
+    }
+]
