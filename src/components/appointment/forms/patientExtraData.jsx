@@ -168,7 +168,7 @@ const PatientExtraData = () => {
           required
           id="outlined-required"
           label="Nombre"
-          value={patientData.nombre}
+          value={(patientData.nombre ?? "").toUpperCase()}
           onBlur={markAsEdited}
           onSubmit={() => {
             console.log("submit");
@@ -185,7 +185,7 @@ const PatientExtraData = () => {
           id="outlined-required"
           label="Apellido Paterno"
           name="apellidoPaterno"
-          value={patientData.apellidoPaterno}
+          value={(patientData.apellidoPaterno ?? "").toUpperCase()}
           onChange={updateValue}
           onBlur={markAsEdited}
           onKeyUp={validarApellidoPaterno}
@@ -198,7 +198,7 @@ const PatientExtraData = () => {
           id="outlined-required"
           label="Apellido Materno"
           name="apellidoMaterno"
-          value={patientData.apellidoMaterno}
+          value={(patientData.apellidoMaterno ?? "").toUpperCase()}
           onChange={updateValue}
           onBlur={markAsEdited}
           onKeyUp={validarApellidoMaterno}

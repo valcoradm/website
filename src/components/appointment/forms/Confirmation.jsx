@@ -108,11 +108,11 @@ const Confirmation = () => {
       payload.paciente.pasaporte = state.patient.id;
     }
     if (!state.patientFound) {
-      payload.paciente.nombre = state.patientExtraData.patientData.nombre;
+      payload.paciente.nombre = state.patientExtraData.patientData.nombre.toUpperCase();
       payload.paciente.apellidoPaterno =
-        state.patientExtraData.patientData.apellidoPaterno;
+        state.patientExtraData.patientData.apellidoPaterno.toUpperCase();
       payload.paciente.apellidoMaterno =
-        state.patientExtraData.patientData.apellidoMaterno;
+        state.patientExtraData.patientData.apellidoMaterno.toUpperCase();
       payload.paciente.telefonoMovil =
         state.patientExtraData.patientData.celular;
       payload.paciente.correo = state.patientExtraData.patientData.email;
