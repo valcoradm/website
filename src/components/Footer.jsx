@@ -67,7 +67,7 @@ function Footer() {
                 <div className="b-blog-short-post__item_date f-blog-short-post__item_date">
                   Lunes a viernes
                   <br />
-                  09:00 Hrs. - 14:00 Hrs.
+                  09:00 Hrs. - 13:00 Hrs.
                   <br />
                   15:30 Hrs. - 19:30 Hrs.
                   <br />
@@ -211,7 +211,7 @@ function Footer() {
                 <div className="b-blog-short-post__item_date f-blog-short-post__item_date">
                   Lunes a viernes
                   <br />
-                  09:00 Hrs. - 14:00 Hrs.
+                  10:00 Hrs. - 14:00 Hrs.
                   <br />
                   15:30 Hrs. - 19:30 Hrs.
                   <br />
