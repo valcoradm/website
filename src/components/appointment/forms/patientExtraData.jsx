@@ -20,6 +20,7 @@ const PatientExtraData = () => {
   const [error, setError] = useState(null);
   const [canSave, setCanSave] = useState(false);
   const [edited, setEdited] = useState({});
+  const [gettedFromUrl, setGettedFromUrl] = useState(false);
   const [patientData, setPatientData] = useState({
     nombre: state.patientExtraData?.patientData?.nombre ?? initialValues.nombre,
     apellidoPaterno:
@@ -32,6 +33,30 @@ const PatientExtraData = () => {
       state.patientExtraData?.patientData?.celular ?? initialValues.celular,
     email: state.patientExtraData?.patientData?.email ?? initialValues.email,
   });
+  useEffect(() => {
+    if(gettedFromUrl){
+      validarTodo();
+    }
+  }, [gettedFromUrl]);
+  useEffect(() => {
+    let url = new URL(window.location.href);
+    let nombre = url.searchParams.get("nombre");
+    let apellidoPaterno = url.searchParams.get("apellidoPaterno");
+    let apellidoMaterno = url.searchParams.get("apellidoMaterno");
+    let celular = url.searchParams.get("celular");
+    let email = url.searchParams.get("email");
+    const source = url.searchParams.get("source");
+    if(source === 'prof') {
+      if (nombre) setPatientData((old) => ({ ...old, nombre }));
+      if (apellidoPaterno)
+        setPatientData((old) => ({ ...old, apellidoPaterno }));
+      if (apellidoMaterno)
+        setPatientData((old) => ({ ...old, apellidoMaterno }));
+      if (celular) setPatientData((old) => ({ ...old, celular }));
+      if (email) setPatientData((old) => ({ ...old, email }));
+      setGettedFromUrl(true);
+    }
+  }, []);
   useEffect(() => {
     if (Object.keys(error ?? {}).length > 0) return setCanSave(false);
     if (patientData.nombre === initialValues.nombre) return setCanSave(false);

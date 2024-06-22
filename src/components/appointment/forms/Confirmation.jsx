@@ -35,6 +35,14 @@ const Confirmation = () => {
   const [error, setError] = React.useState(null);
   const [showError, setShowError] = React.useState(false);
   const [sucursales, setSucursales] = useState([]);
+  const [fromProfSite, setFromProfSite] = useState(false);
+  useEffect(() => {
+    let url = new URL(window.location.href);
+    const source = url.searchParams.get("source");
+    if(source === 'prof'){
+      setFromProfSite(true);
+    }
+  }, []);
   const handleCloseError = () => {
     setShowError(false);
     if (error?.code === "INVALID_PATIENT") {
@@ -119,6 +127,9 @@ const Confirmation = () => {
     }
     ValcorApi.saveAppointment(payload)
       .then((res) => {
+        if(fromProfSite) {
+          window.close();
+        }
         dispatch({
           type: "APPOINTMENT_LOADING",
           payload: { loading: false },
