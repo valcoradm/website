@@ -3,28 +3,35 @@ const Validator = {
     // Eliminar puntos y guiones del RUT
     rut = rut.replace(/[\.-]/g, "");
 
-    // Separar el RUT en número y dígito verificador
-    let rutNumero = rut.slice(0, -1);
-    let rutVerificador = rut.slice(-1).toUpperCase(); // Convertir a mayúscula
+    // Verificar longitud mínima
+    if (rut.length < 2) return false;
 
-    // Calcular el dígito verificador esperado
+    // Separar cuerpo y dígito verificador
+    const rutBody = rut.slice(0, -1);
+    const dv = rut.slice(-1).toUpperCase();
+
+    // Validar que el cuerpo solo contenga números
+    if (!rutBody.match(/^\d+$/)) return false;
+
+    // Calcular dígito verificador
     let suma = 0;
     let multiplicador = 2;
 
-    for (let i = rutNumero.length - 1; i >= 0; i--) {
-      suma += parseInt(rutNumero.charAt(i)) * multiplicador;
-
+    // Recorrer cada dígito de derecha a izquierda
+    for (let i = rutBody.length - 1; i >= 0; i--) {
+      suma += parseInt(rutBody.charAt(i)) * multiplicador;
       multiplicador = multiplicador === 7 ? 2 : multiplicador + 1;
     }
 
-    const digitoVerificadorEsperado = 11 - (suma % 11);
-    const digitoVerificador =
-      digitoVerificadorEsperado === 10
-        ? "K"
-        : digitoVerificadorEsperado.toString();
+    const dvEsperado = 11 - (suma % 11);
+    let dvCalculado;
 
-    // Verificar si el dígito verificador ingresado coincide con el esperado
-    return rutVerificador === digitoVerificador;
+    if (dvEsperado === 11) dvCalculado = '0';
+    else if (dvEsperado === 10) dvCalculado = 'K';
+    else dvCalculado = dvEsperado.toString();
+
+    // Comparar dígito verificador calculado con el proporcionado
+    return dv === dvCalculado;
   },
 };
 
