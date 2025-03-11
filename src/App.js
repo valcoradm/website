@@ -7,6 +7,7 @@ import {
 import MainPage from "./pages/Main";
 import AppointmentPage from "./pages/Appointment";
 import ValcorApi from "./api/ValcorApi";
+import Resultado from "./components/resultados/resultado";
 
 function App() {
   window.sucursales = {
@@ -34,6 +35,14 @@ function App() {
       path: "Appointment",
       element: <AppointmentPage />,
     },
+    {
+      path: "Resultado",
+      element: <Resultado />,
+    },
+    {
+      path: "test",
+      element: <>test</>,
+    },	
     {
       path: "/",
       element: (window?.location?.hash?.toLowerCase())  === '#appointment' ? <AppointmentPage /> : <MainPage />,

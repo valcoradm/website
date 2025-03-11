@@ -1,0 +1,8 @@
+{
+  "code": 200,
+  "msg": "Link válido",
+  "data": {
+    "token": "xxxx.xxxx.xxxx",
+    "enabled": true
+  }
+}

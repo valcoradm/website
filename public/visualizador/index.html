@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>VALCOR::VISUALIZADOR</title>
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script src="regla/jquery.js"></script>
+    <link
+      href="regla/regla.css?v=1.1.0"
+      rel="stylesheet"
+      type="text/css"
+      media="all"
+    />
+    <link rel="stylesheet" href="regla/fa/css/font-awesome.min.css" />
+    <style>
+      .fix-fixed {
+        height: 110px;
+      }
+      .container {
+        width: 100%;
+        height: 110px;
+        overflow: hidden;
+        position: fixed;
+        background: white;
+        z-index: 9999;
+      }
+
+      .col {
+        width: 20%;
+        float: left;
+        min-height: 50px;
+      }
+
+      .col2 {
+        width: 31%;
+        float: left;
+        padding-left: 1%;
+        padding-right: 1%;
+      }
+
+      #logo {
+        width: 250px;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        background-color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <button id="seleccionar-regla" class="col">
+        <i class="fa fa-long-arrow-right" aria-hidden="true"></i> Regla
+      </button>
+      <button id="seleccionar-angulo" class="col">
+        <i class="fa fa-angle-double-right" aria-hidden="true"></i>Regla Angular
+      </button>
+      <button id="deshacer" class="col">
+        <i class="fa fa-undo" aria-hidden="true"></i>Deshacer
+      </button>
+      <button id="invertir" class="col">
+        <i class="fa fa-tint" aria-hidden="true"></i>Invertir Grises
+      </button>
+      <button id="mover-punto" class="col">
+        <i class="fa fa-arrows" aria-hidden="true"></i>Mover Punto Medición
+      </button>
+      <div class="col2">
+        <div style="margin-bottom: 15px">
+          <strong><i class="fa fa-sun-o" aria-hidden="true"></i>Brillo</strong>
+        </div>
+        <input id="brillo" type="range" min="0" max="200" value="100" />
+      </div>
+      <div class="col2">
+        <div style="margin-bottom: 15px">
+          <strong
+            ><i class="fa fa-tint" aria-hidden="true"></i>Contraste</strong
+          >
+        </div>
+        <input id="contraste" type="range" min="0" max="200" value="100" />
+      </div>
+      <div class="col2">
+        <div style="margin-bottom: 15px">
+          <strong><i class="fa fa-adjust" aria-hidden="true"></i>Zoom</strong>
+        </div>
+        <input id="zoom-range" type="range" min="0" max="300" value="100" />
+      </div>
+    </div>
+    <div class="fix-fixed"></div>
+    <div>
+      <div></div>
+      <canvas id="medicion" style="background: transparent"></canvas>
+    </div>
+
+    <output>
+      <ul style="display: none">
+        <li>
+          Horizontal distance <span style="color: green">(x1 - x)</span>:
+          <span id="hd"></span>
+        </li>
+        <li>
+          Vertical distance <span style="color: blue">(y1 - y)</span>:
+          <span id="vd"></span>
+        </li>
+        <li>
+          Length
+          <span style="color: red"
+            >Math.sqrt((x1-x) * (x1-x) + (y1-y) * (y1-y))</span
+          >: <span id="length"></span>
+        </li>
+        <li>
+          Angle: Math.atan2( y1-y, x1-x ) * 180 / Math.PI:
+          <span id="angle"></span>
+        </li>
+      </ul>
+    </output>
+
+    <img id="logo" src="/assets/img/logo.png" />
+    <script type="text/javascript">
+      var ZOOM = 0;
+      function GetUrlParamByName(llave) {
+        var url_string = window.location.href;
+        var url = new URL(url_string);
+        var c = url.searchParams.get(llave);
+        return c;
+      }
+      ZOOM = GetUrlParamByName("zoom");
+      valorImagenExterno = `https://valcor.app/upload/${GetUrlParamByName("archivo")}`;
+    </script>
+
+    <script src="regla/regla.js?v=1.1.0"></script>
+  </body>
+</html>

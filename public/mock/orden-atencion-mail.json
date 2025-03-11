@@ -1,0 +1,24 @@
+{
+  "nombreDr": "NXXXX AXXXXXXX GXXXXXXXXX  TXXXXX",
+  "nombrePaciente": "PXXXXX XXXXXXX RXXXXX CXXXXX",
+  "fechaNacimientoPaciente": "/Date(760417200000)/",
+  "prestaciones": [
+    {
+      "nombre": "RETROALVEOLAR/ PERIAPICAL",
+      "cantidad": 1
+    }
+  ],
+  "archivos": [
+  ],
+  "observaciones": [
+    {
+      "id": 1,
+      "texto": "SE ADJUNTA TOMA ADICIONAL PARA COMPLEMENTAR ESTUDIOS /AGRADECEMOS SU PREFERENCIA, LE DESEAMOS QUE TENGA UN MUY BUEN DIA."
+    },
+    {
+      "id": 3,
+      "texto": "paciente acepta envio digital"
+    }
+  ],
+  "fechaAtencion": "/Date(1740410182250)/"
+}

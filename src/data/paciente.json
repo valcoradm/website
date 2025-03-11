@@ -1,0 +1,14 @@
+{
+  "nombreDr": "VALCOR MISCANTI  ",
+  "nombrePaciente": "AXXXX SXXXXXX SXXXXX",
+  "fechaNacimientoPaciente": "/Date(722833200000)/",
+  "prestaciones": [
+    {
+      "nombre": "PANORAMICA + TELERRADIOGRAFIA",
+      "cantidad": 1
+    }
+  ],
+  "archivos": [
+    
+  ]
+}
