@@ -11,6 +11,7 @@ const urls = {
   saveAppointment: () => !isMock ? "publicapi/agenda/post": "agendar.json",
   getJwt: ({a,b,c}) => !isMock ? `correo/api/validar-link?a=${a}&b=${b}&c=${c}`: "jwt.json",
   getOrdenAtencion: (token) => !isMock ? `semipublic/Index/?token=${token}`: "orden-atencion-mail.json",
+  resendMail: () => !isMock ? "correo/api/reenviar-correo": "re-enviar-mail.json",
 };
 
 const ValcorApi = API(urls.apiUrl);
@@ -22,6 +23,7 @@ const checkPatientExists = (type, id) =>
 const saveAppointment = (payload) => !isMock ? ValcorApi.Post(urls.saveAppointment(), payload) : ValcorApi.Get(urls.saveAppointment());
 const getJwt = (payload) => ValcorApi.Get(urls.getJwt(payload));
 const getOrdenAtencion = (payload) => ValcorApi.Get(urls.getOrdenAtencion(payload));
+const resendMail = (payload) => ValcorApi.Post(urls.resendMail(), payload);
 
 const endpoint = {
   getSucursales,
@@ -30,6 +32,7 @@ const endpoint = {
   saveAppointment,
   getJwt,
   getOrdenAtencion,
+  resendMail
 };
 
 export default endpoint;
