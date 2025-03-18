@@ -20,7 +20,6 @@ function Resultado() {
     const res = await ValcorApi.getJwt({ a, b, c });
     if(!res.data){
       window.location.href = "/";
-      return;
     }
     if (res.data.enabled) {
       const data = await ValcorApi.getOrdenAtencion(res.data.token);
@@ -56,14 +55,8 @@ function Resultado() {
       {!loading && (
         <>
           {data && <Cabecera data={data} />}
-          <div className="row album py-5 bg-body-tertiary">
-            <div className="col-md-9 col-sm-12">
-              {data && <Archivos data={data.archivos} />}
-            </div>
-            <div className="col-md-3 col-sm-12">
-              {data && <Detalle data={data} />}
-            </div>
-          </div>
+          {data && <Detalle data={data} />}
+          {data && <Archivos data={data.archivos} />}
         </>
       )}
       {!loading && canSendMail && !mailSent && (

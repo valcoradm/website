@@ -10,8 +10,8 @@ function Detalle({ data }) {
       2: "Informante",
       4: "Final",
     };
-    const idObservaciones = [3,1,2,4];
-    console.log(idObservaciones)
+    const idObservaciones = [3, 1, 2, 4];
+    console.log(idObservaciones);
     const obsByTipo = data.observaciones.reduce((acc, item) => {
       acc[item.id] = item;
       return acc;
@@ -30,29 +30,24 @@ function Detalle({ data }) {
     setObs(_obs);
   }, [data]);
   return (
-    <div>
-      <h1>Prestaciones</h1>
-      <ul>
+    <>
+      <div className="w-full bg-gray-100 p-4 rounded-lg mb-6 text-center">
+        <h3 className="text-lg font-semibold">Prestaciones</h3>
         {data.prestaciones.map((prestacion) => (
-          <li>
-            <span>{prestacion.cantidad} </span>
-            <span>{prestacion.nombre}</span>
-          </li>
+          <p className="text-gray-700">
+            {prestacion.cantidad} {prestacion.nombre}
+          </p>
         ))}
-      </ul>
-      {obs && obs.length > 0 && (
-        <>
-          <h1>Observaciones</h1>
-          <ul>
-            {obs.map((item) => (
-              <li>
-                <strong>{item.titulo}</strong>: {item.texto}
-              </li>
-            ))}
-          </ul>
-        </>
-      )}
-    </div>
+      </div>
+      <div className="w-full bg-gray-100 p-4 rounded-lg mb-6 text-center">
+        <h3 className="text-lg font-semibold">Observaciones</h3>
+        {obs.map((item) => (
+          <p className="text-gray-700">
+            {item.titulo}: {item.texto}
+          </p>
+        ))}
+      </div>
+    </>
   );
 }
 

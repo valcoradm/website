@@ -1,6 +1,6 @@
 import moment from "moment";
 
-function Cabecera({data}) {
+function Cabecera({ data }) {
   const obtenerUnidadMinima = (diferencia) => {
     const unidades = [
       { valor: diferencia.asYears(), unidad: "año" },
@@ -31,23 +31,19 @@ function Cabecera({data}) {
   };
 
   return (
-    <section class="py-5 text-center container">
-          <img src="assets/img/logo.png" alt="logo" />
-      <div class="row py-lg-5">
-        <div class="col-lg-6 col-md-8 mx-auto">
-          <h1 class="fw-light">
-            {data.nombrePaciente}
-          </h1>
-          <small>
-            Edad: {ObtenerEdadPaciente(data.fechaNacimientoPaciente)}
-          </small>
-          <p class="lead text-body-secondary">
-            A continuación se muestran los resultados de la orden de atención
-            realizada el {moment(data.fechaAtencion).format("DD/MM/YYYY")}
-          </p>
-        </div>
-      </div>
-    </section>
+    <div className="text-center mb-6">
+      <h1 className="text-3xl font-bold text-gray-900"><img src="assets/img/logo.png" alt="VALCOR" /></h1>
+      <h2 className="text-xl font-semibold text-gray-700">
+        {data.nombrePaciente}
+      </h2>
+      <p className="text-gray-500">
+        Edad: {ObtenerEdadPaciente(data.fechaNacimientoPaciente)}
+      </p>
+      <p className="text-gray-600">
+        Resultados de la orden de atención -{" "}
+        {moment(data.fechaAtencion).format("DD/MM/YYYY")}
+      </p>
+    </div>
   );
 }
 
