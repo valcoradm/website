@@ -209,16 +209,25 @@ function Footer() {
               <div>
                 <strong>Horario de Atención</strong>
                 <div className="b-blog-short-post__item_date f-blog-short-post__item_date">
-                  Lunes a viernes
+                  Lunes
                   <br />
-                  09:00 Hrs. - 13:00 Hrs.
+                  09:30 Hrs. - 14:00 Hrs.
                   <br />
-                  14:30 Hrs. - 19:30 Hrs.
+                  15:30 Hrs. - 19:30 Hrs.
                   <br />
                   <br />
-                  Sábados
+                  Martes a Jueves
                   <br />
-                  10:00 Hrs. - 13:00 Hrs.
+                  09:00 Hrs. - 14:00 Hrs.
+                  <br />
+                  15:30 Hrs. - 19:30 Hrs.
+                  <br />
+                  <br />
+                  Viernes
+                  <br />
+                  09:00 Hrs. - 14:00 Hrs.
+                  <br />
+                  15:30 Hrs. - 19:00 Hrs.
                 </div>
               </div>
             </div>
