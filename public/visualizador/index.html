@@ -48,6 +48,32 @@
         right: 0;
         background-color: white;
       }
+
+      .sub-menu-container {
+        display: flex;
+        width: 100%;
+      }
+
+      .sliders-container {
+        width: calc(100% - 100px);
+        display: flex;
+        gap: 8px;
+        margin-right: 8px;
+        margin-left: 8px;
+      }
+
+      @media (max-width: 430px) {
+        .sliders-container {
+          width: calc(100% - 50px);
+        }
+        .cerrar-btn {
+          display: none;
+        }
+      }
+
+      .colSlider {
+        width: 100%;
+      }
     </style>
   </head>
   <body>
@@ -67,35 +93,49 @@
       <button id="mover-punto" class="col">
         <i class="fa fa-arrows" aria-hidden="true"></i>Mover Punto Medición
       </button>
-      <div class="col2">
-        <div style="margin-bottom: 15px">
-          <strong><i class="fa fa-sun-o" aria-hidden="true"></i>Brillo</strong>
+      <div class="sub-menu-container">
+        <div class="sliders-container">
+          <div class="colSlider">
+            <div style="margin-bottom: 15px">
+              <strong><i class="fa fa-sun-o" aria-hidden="true"></i>Brillo</strong>
+            </div>
+            <input id="brillo" type="range" min="0" max="200" value="100" />
+          </div>
+          <div class="colSlider">
+            <div style="margin-bottom: 15px">
+              <strong
+                ><i class="fa fa-tint" aria-hidden="true"></i>Contraste</strong
+              >
+            </div>
+            <input id="contraste" type="range" min="0" max="200" value="100" />
+          </div>
+          <div class="colSlider">
+            <div style="margin-bottom: 15px">
+              <strong><i class="fa fa-adjust" aria-hidden="true"></i>Zoom</strong>
+            </div>
+            <input id="zoom-range" type="range" min="0" max="300" value="100" />
+          </div>
         </div>
-        <input id="brillo" type="range" min="0" max="200" value="100" />
-      </div>
-      <div class="col2">
-        <div style="margin-bottom: 15px">
-          <strong
-            ><i class="fa fa-tint" aria-hidden="true"></i>Contraste</strong
+        <div class="col" style="padding-left: 0%; padding-right: 0%; width: 100px">
+          <button
+            style="width: 100%"
+            id="cambiar-imagen"
+            class="col"
+            onclick="window.parent.postMessage({type: 'cambiarImagen'}, '*')"
           >
+            <i class="fa fa-refresh" aria-hidden="true"></i>Cambiar
+          </button>
         </div>
-        <input id="contraste" type="range" min="0" max="200" value="100" />
-      </div>
-      <div class="col2">
-        <div style="margin-bottom: 15px">
-          <strong><i class="fa fa-adjust" aria-hidden="true"></i>Zoom</strong>
+        <div class="col cerrar-btn" style="padding-left: 0%; padding-right: 0%; width: 100px">
+          <button
+            style="width: 100%"
+            id="cerrar-imagen"
+            class="col"
+            onclick="document.getElementById('modal-confirmacion').style.display='block'"
+          >
+            <i class="fa fa-times" aria-hidden="true"></i>Cerrar
+          </button>
         </div>
-        <input id="zoom-range" type="range" min="0" max="300" value="100" />
-      </div>
-      <div class="col2" style="padding-left: 0%; padding-right: 0%; width: 19%">
-        <button
-          style="width: 100%"
-          id="cerrar-imagen"
-          class="col"
-          onclick="document.getElementById('modal-confirmacion').style.display='block'"
-        >
-          <i class="fa fa-times" aria-hidden="true"></i>Cerrar Imagen
-        </button>
       </div>
     </div>
     <div class="fix-fixed"></div>
@@ -207,7 +247,6 @@
               margin-left: 10px;
               cursor: pointer;
             "
-            onclick="window.close()"
           >
             Confirmar
           </button>
@@ -216,6 +255,11 @@
     </div>
 
     <script>
+      document.getElementById("cambiar-imagen").onclick = function (e) {
+        e.preventDefault();
+        window.parent.postMessage({type: 'cambiarImagen'}, '*');
+      };
+
       document.getElementById("cerrar-imagen").onclick = function (e) {
         e.preventDefault();
         document.getElementById("modal-confirmacion").style.display = "block";
@@ -230,6 +274,8 @@
       };
 
       document.getElementById("modal-confirmar").onclick = function () {
+        console.log('cerrarVisor');
+        window.parent.postMessage({type: 'cerrarVisor'}, '*');
         window.close();
       };
     </script>

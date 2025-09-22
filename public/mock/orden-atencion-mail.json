@@ -9,7 +9,19 @@
     }
   ],
   "archivos": [
-  ],
+        {
+            "nombre": "DONTELLO.jpg.20250226031319718.jpg",
+            "url": "/2025/2748/ImagenTecnologo/DONTELLO.jpg.20250226031319718.jpg",
+            "fechaCreacion": "\/Date(1740550399751)\/",
+            "zoom": 0
+        },
+        {
+            "nombre": "133545343043028245.jpg.20250226032436670.jpg",
+            "url": "/2025/2748/InformeMedico/133545343043028245.jpg.20250226032436670.jpg",
+            "fechaCreacion": "\/Date(1740551076678)\/",
+            "zoom": 0
+        }
+    ],
   "observaciones": [
     {
       "id": 1,
